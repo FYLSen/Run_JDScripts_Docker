@@ -22,7 +22,7 @@ def main():
     setting = getSetting(preferences_path)
     shareCodes = ''
     for item in setting:
-        if item['status'] == "dead" or item['status'] == "daily" ：continue
+        if item['status'] == "dead" or item['status'] == "daily" : continue
         sc_group = []
         for CN in env['CONTAINER_NAME']:
             logs_path = "/logs/%s/%s" % (CN, item['filename'])
