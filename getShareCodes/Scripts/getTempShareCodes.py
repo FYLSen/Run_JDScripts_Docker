@@ -15,7 +15,7 @@ def getEnv():
     return env
 
 def main():
-    preferences_path = r'/Run_JDScripts_Docker/config/preferences.json'
+    preferences_path = r'/Run_JDScripts_Docker/getShareCodes/config/preferences.json'
     sharecode_path = r'/shareCodes/'
 
     env = getEnv()
