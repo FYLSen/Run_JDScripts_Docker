@@ -10,7 +10,7 @@ def getSetting(path):
 
 def getEnv():
     env = {
-        "CONTAINER_NAME" = os.environ.get('CONTAINER_NAME').split("&")
+        "CONTAINER_NAME" : os.environ.get('CONTAINER_NAME').split("&")
     }
     return env
 
