@@ -76,9 +76,6 @@ services:
     build: 
       context: .
       dockerfile: ./getShareCodes/Dockerfile
-      args:
-        - EMAIL=
-        - NAME=
     restart: always
     env_file:
       - ./config/getShareCodes.env
