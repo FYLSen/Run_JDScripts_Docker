@@ -1,6 +1,5 @@
 FROM alpine:latest
 
-ARG REPOSITORY_HOST
 ARG EMAIL
 ARG NAME
 
@@ -12,13 +11,12 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
     && rm -rf /var/cache/apk/* \
     && echo "Asia/Shanghai" > /etc/timezone && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     &&  git config --global user.email "$EMAIL" \
-    &&  git config --global user.name "$NAME"
-
-WORKDIR /
-RUN git clone $REPOSITORY_HOST /Repository \
+    &&  git config --global user.name "$NAME" /Repository \
     && git clone https://gitee.com/rhysn/Run_JDScripts_Docker.git /Run_JDScripts_Docker \
     && mkdir shareCodes
+    
+WORKDIR /
 
-RUN sh Run_JDScripts_Docker/getShareCodes/running.sh
+RUN crontab /Run_JDScripts_Docker/getShareCodes/crontab.sh
     
 CMD crontab -l && crond -f

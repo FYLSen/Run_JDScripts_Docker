@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ ! -d "/Repository" ]; then
+  git clone ${REPOSITORY_HOST} Repository || exit 1
+fi
+
 cd /Run_JDScripts_Docker || exit 1
 git pull && python3 -m pip install -r /Run_JDScripts_Docker/getShareCodes/requirements.txt
 

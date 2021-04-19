@@ -77,7 +77,6 @@ services:
       context: .
       dockerfile: ./getShareCodes/Dockerfile
       args:
-        - REPOSITORY_HOST=
         - EMAIL=
         - NAME=
     restart: always
