@@ -2,6 +2,7 @@ FROM alpine:latest
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
     && apk update && apk add --no-cache tzdata git moreutils curl openssh python3 \
+    && git config --global pull.ff only \
     && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-pip.py \
     && python3 -m pip install -i https://mirrors.ustc.edu.cn/pypi/web/simple pip -U \
     && python3 -m pip config set global.index-url https://mirrors.ustc.edu.cn/pypi/web/simple \
