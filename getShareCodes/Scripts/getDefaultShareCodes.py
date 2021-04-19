@@ -22,17 +22,17 @@ def main():
     setting = getSetting(preferences_path)
     shareCodes = ''
     for item in setting:
-        if item.status == "dead" or item.status == "daily" ：continue
+        if item['status'] == "dead" or item['status'] == "daily" ：continue
         sc_group = []
-        for CN in env.CONTAINER_NAME:
-            logs_path = "/logs/%s/%s" % (CN, item.filename)
+        for CN in env['CONTAINER_NAME']:
+            logs_path = "/logs/%s/%s" % (CN, item['filename'])
             with open(logs_path, "r", "utf-8") as f: 
                 logs = f.read()
-                pattern = re.compile(item.pattern)
+                pattern = re.compile(item['pattern'])
                 sc_group += pattern.findall(str)
             f.close()
 
-        shareCodes = "%s#%s\n%s=%s\n\n" % (shareCodes, item.name, item.envname, '@'.join(sc_group))
+        shareCodes = "%s#%s\n%s=%s\n\n" % (shareCodes, item['name'], item['envname'], '@'.join(sc_group))
         
         with open(sharecode_path + item.submitname ,'w') as f:
             f.write('&'.join(sc_group))
