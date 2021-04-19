@@ -29,12 +29,12 @@ def main():
             with open(logs_path, "r", "utf-8") as f: 
                 logs = f.read()
                 pattern = re.compile(item['pattern'])
-                sc_group += pattern.findall(str)
+                sc_group += pattern.findall(logs)
             f.close()
 
         shareCodes = "%s#%s\n%s=%s\n\n" % (shareCodes, item['name'], item['envname'], '@'.join(sc_group))
         
-        with open(sharecode_path + item.submitname ,'w') as f:
+        with open(sharecode_path + item['submitname'] ,'w') as f:
             f.write('&'.join(sc_group))
         f.close()
 
