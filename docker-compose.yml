@@ -70,7 +70,6 @@ services:
       - ./config/overall.sh:/overall
       - ./config/jdGroup/cookies.sh:/cookies
       - ./logs/jdGroup:/logs
-    depends_on: jd1
   jdgetsharecodes:
     container_name: jdgetsharecodes
     image: jdgetsharecodes:latest
