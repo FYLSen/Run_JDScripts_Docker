@@ -1,5 +1,5 @@
 # 脚本更新 >>
-55 * * * * bash /Run_JDScripts_Docker/sync.sh 1>/proc/1/fd/1 2>/proc/1/fd/2 > /logs/sync.log && date >> /logs/sync.log 2>&1
+55 * * * * bash /Run_JDScripts_Docker/sync.sh 1 > /logs/sync.log && date >> /logs/sync.log 2>&1
 # 更新邀请码 >>
 12 0 * * * bash -c "bash /Run_JDScripts_Docker/updateShareCodes.sh | sed 's/^/ 【更新邀请码】/'; " 
 # 兑换任务脚本 >>
