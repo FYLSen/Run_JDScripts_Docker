@@ -12,7 +12,9 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
 WORKDIR /
 
 RUN git clone $scriptsgiturl /scripts \
-    && git clone https://gitee.com/rhysn/Run_JDScripts_Docker.git /Run_JDScripts_Docker
+    && git clone https://gitee.com/rhysn/Run_JDScripts_Docker.git /Run_JDScripts_Docker \
+    && mkdir ShareCodes
+    
 
 RUN bash /Run_JDScripts_Docker/sync.sh
 
