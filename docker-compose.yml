@@ -74,8 +74,12 @@ services:
     container_name: jdgetsharecodes
     image: jdgetsharecodes:latest
     build: 
-      context: ./getShareCodes
+      context: .
       dockerfile: ./getShareCodes/Dockerfile
+      args:
+        - REPOSITORY_HOST=
+        - EMAIL=
+        - NAME=
     restart: always
     env_file:
       - ./config/getShareCodes.env
@@ -86,7 +90,7 @@ services:
     container_name: jdsubmitcodes
     image: jdsubmitcodes:latest
     build: 
-      context: ./submitShareCodes
+      context: .
       dockerfile: ./submitShareCodes/Dockerfile
     restart: always
     volumes:
