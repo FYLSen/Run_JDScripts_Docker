@@ -1,0 +1,96 @@
+version: '3.8'
+x-logger: &logger
+  logging:
+    driver: "json-file"
+    options:
+      max-size: "10m"
+      max-file: "3"
+x-common: &common
+  image: jdscripts:latest
+  build:
+    context: .
+    dockerfile: ./Dockerfile
+    args: 
+      - scriptsgiturl=
+  restart: always
+  env_file: 
+    - ./config/jdScripts.env
+services:
+  jd1:
+    <<: [*logger, *common]
+    container_name: jd1
+    volumes:
+      - ./config/overall.sh:/overall
+      - ./config/jd1/preferences.sh:/env
+      - ./config/jd1/cookies.sh:/cookies
+      - ./logs/jd1:/logs
+  jd2:
+    <<: [*logger, *common]
+    container_name: jd2
+    volumes:
+      - ./config/overall.sh:/overall
+      - ./config/jd2/preferences.sh:/env
+      - ./config/jd2/cookies.sh:/cookies
+      - ./logs/jd2:/logs
+  jd3:
+    <<: [*logger, *common]
+    container_name: jd3
+    volumes:
+      - ./config/overall.sh:/overall
+      - ./config/jd3/preferences.sh:/env
+      - ./config/jd3/cookies.sh:/cookies
+      - ./logs/jd3:/logs
+  jd4:
+    <<: [*logger, *common]
+    container_name: jd4
+    volumes:
+      - ./config/overall.sh:/overall
+      - ./config/jd4/preferences.sh:/env
+      - ./config/jd4/cookies.sh:/cookies
+      - ./logs/jd4:/logs
+  jd5:
+    <<: [*logger, *common]
+    container_name: jd5
+    volumes:
+      - ./config/overall.sh:/overall
+      - ./config/jd5/preferences.sh:/env
+      - ./config/jd5/cookies.sh:/cookies
+      - ./logs/jd5:/logs
+  jdgroup:
+    <<: [*logger]
+    image: jdgroup:latest
+    container_name: jdgroup
+    build:
+      context: ./jdGroup
+      dockerfile: ./jdGroup/Dockerfile
+    restart: always
+    env_file:
+      - ./config/jdGroup.env
+    volumes:
+      - ./config/overall.sh:/overall
+      - ./config/jdGroup/cookies.sh:/cookies
+      - ./logs/jdGroup:/logs
+    depends_on: jd1
+  jdgetsharecodes:
+    container_name: jdgetsharecodes
+    image: jdgetsharecodes:latest
+    build: 
+      context: ./getShareCodes
+      dockerfile: ./getShareCodes/Dockerfile
+    restart: always
+    env_file:
+      - ./config/getShareCodes.env
+    volumes:
+      - ./getShareCodes/.ssh:/root/.ssh
+      - ./logs:/logs
+  jdsublimtcodes:
+    container_name: jdsubmitcodes
+    image: jdsubmitcodes:latest
+    build: 
+      context: ./submitShareCodes
+      dockerfile: ./submitShareCodes/Dockerfile
+    restart: always
+    volumes:
+      - ./submitShareCodes/TelegramCLI:/home/telegramd/.telegram-cli
+    
+          

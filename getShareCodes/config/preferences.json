@@ -1,0 +1,111 @@
+{
+    "date": "2021-04-18",
+    "editor": "Rhysn",
+    "status": "active/dead/daily",
+    "data": [
+        {
+            "name": "京喜工厂",
+            "filename": "jd_dreamFactory.log",
+            "status": "active",
+            "pattern": "【京东账号.+的京喜工厂好友互助码】(.+)",
+            "envname": "DREAM_FACTORY_SHARE_CODES",
+            "submitname": "jd_dreamFactory"
+        },
+        {
+            "name": "种豆得豆",
+            "filename": "jd_plantBean.log",
+            "status": "active",
+            "pattern": "【京东账号.+的京东种豆得豆好友互助码】(.+)",
+            "envname": "PLANT_BEAN_SHARECODES",
+            "submitname": "jd_plantBean"
+        },
+        {
+            "name": "东东工厂",
+            "filename": "jd_jdfactory.log",
+            "status": "active",
+            "pattern": "【京东账号.+的东东工厂好友互助码】(.+)",
+            "envname": "DDFACTORY_SHARECODES",
+            "submitname": "jd_jdfactory"
+        },
+        {
+            "name": "东东农场",
+            "filename": "jd_fruit.log",
+            "status": "active",
+            "pattern": "【京东账号.+的东东农场好友互助码】(.+)",
+            "envname": "FRUITSHARECODES",
+            "submitname": "jd_fruit"
+        },
+        {
+            "name": "财富岛",
+            "filename": "jd_cfd.log",
+            "status": "active",
+            "pattern": "【京东账号.+的京喜财富岛好友互助码】(.+)",
+            "envname": "JDCFD_SHARECODES",
+            "submitname": "jd_cfd"
+        },
+        {
+            "name": "京东赚赚",
+            "filename": "jd_jdzz.log",
+            "status": "active",
+            "pattern": "【京东账号.+的京东赚赚好友互助码】(.+)",
+            "envname": "JDZZ_SHARECODES",
+            "submitname": "jd_jdzz"
+        },
+        {
+            "name": "东东萌宠",
+            "filename": "jd_pet.log",
+            "status": "active",
+            "pattern": "【京东账号.+的东东萌宠好友互助码】(.+)",
+            "envname": "PETSHARECODES",
+            "submitname": "jd_pet"
+        },
+        {
+            "name": "疯狂Joy",
+            "filename": "jd_crazy_joy.log",
+            "status": "active",
+            "pattern": "【京东账号.+的crazyJoy任务好友互助码】(.+)",
+            "envname": "JDJOY_SHARECODES",
+            "submitname": "jd_crazy_joy"
+        },
+        {
+            "name": "京东领现金",
+            "filename": "jd_cash.log",
+            "status": "active",
+            "pattern": "【京东账号.+的签到领现金好友互助码】(.+)",
+            "envname": "JD_CASH_SHARECODES",
+            "submitname": "jd_cash"
+        },
+        {
+            "name": "口袋书店",
+            "filename": "jd_bookshop.log",
+            "status": "active",
+            "pattern": "【京东账号.+的口袋书店好友互助码】(.+)",
+            "envname": "BOOKSHOP_SHARECODES",
+            "submitname": "jd_bookshop"
+        },
+        {
+            "name": "5G魔盒",
+            "filename": "jd_mohe.log",
+            "status": "dead",
+            "pattern": "【京东账号.+的5G超级盲盒好友互助码】(.+)",
+            "envname": "BOOKSHOP_SHARECODES",
+            "submitname": "jd_mohe"
+        },
+        {
+            "name": "手机狂欢城",
+            "filename": "jd_carnivalcity.log",
+            "status": "daily",
+            "pattern": "【京东账号.+的京东手机狂欢城好友互助码】(.+)",
+            "envname": "JD818_SHARECODES",
+            "submitname": "jd_carnivalcity"
+        },
+        {
+            "name": "东东小窝",
+            "filename": "jd_small_home.log",
+            "status": "dead",
+            "pattern": "【京东账号.+的东东小窝好友互助码】(.+)",
+            "envname": "JD818_SHARECODES",
+            "submitname": "jd_small_home"
+        }
+    ]
+}
