@@ -13,7 +13,7 @@ done
 
 cd /Repository || exit 1
 git pull
-cp -rf /shareCodes/* /Repository/${SHARECODESPATH}/
+cp -rf /ShareCodes/* /Repository/${SHARECODESPATH}/
 
 COMMITMESSAGE="邀请码更新于 "$(date)
 git add .

@@ -100,6 +100,14 @@
             "submitname": "jd_carnivalcity"
         },
         {
+            "name": "东东健康社区",
+            "filename": "jd_health.log",
+            "status": "dead",
+            "pattern": "好友助力码：(.+)",
+            "envname": "JDHEALTH_SHARECODES",
+            "submitname": "jd_health"
+        },
+        {
             "name": "东东小窝",
             "filename": "jd_small_home.log",
             "status": "dead",
