@@ -57,17 +57,11 @@ services:
       - ./config/jd5/cookies.sh:/cookies
       - ./logs/jd5:/logs
   jdgroup:
-    <<: [*logger]
-    image: jdgroup:latest
+    <<: [*logger, *common]
     container_name: jdgroup
-    build:
-      context: ./jdGroup
-      dockerfile: ./jdGroup/Dockerfile
-    restart: always
-    env_file:
-      - ./config/jdGroup.env
     volumes:
       - ./config/overall.sh:/overall
+      - ./config/jdGroup/preferences.sh:/env
       - ./config/jdGroup/cookies.sh:/cookies
       - ./logs/jdGroup:/logs
   jdgetsharecodes:
