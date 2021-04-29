@@ -1,6 +1,9 @@
 #!/bin/bash
 
 if [ ! -d "/Repository" ]; then
+  git config --global user.email ${GITUSEREMAIL}
+  git config --global user.name ${GITUSERNAME}
+  git config --global pull.ff only
   git clone ${REPOSITORY_HOST} Repository || exit 1
 fi
 
