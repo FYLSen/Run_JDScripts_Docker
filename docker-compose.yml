@@ -89,7 +89,6 @@ services:
       - ./config/getCookies.env
     volumes:
       - ./config:/config
-      - ./getCookies:/App
     networks:
       - jdcookies
   jdnginx:

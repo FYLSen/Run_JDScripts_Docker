@@ -1,6 +1,6 @@
 from PIL import Image
 import qrcode, requests, base64, time, re, os, multiprocessing, sys
-from bottle import route, run, template
+from app import app
 
 def getEnv():
     return {
@@ -248,7 +248,7 @@ def saveCookies(message):
 
     sys.exit()
 
-@route('/')
+@app.route('/')
 def index():
     message = multiprocessing.Queue()
     p = multiprocessing.Process(target=saveCookies, args=(message,))
@@ -256,11 +256,10 @@ def index():
     time.sleep(1)
     messageInfo = message.get(True)
 
-    return template('index',message = messageInfo)
+    return render_template('index.html',message = messageInfo)
 
-if __name__ == '__main__':
-    
-    run(host = 'localhost', port = int(os.environ.get('PORT')))
+
+
     
 
     
