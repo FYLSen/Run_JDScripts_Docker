@@ -99,7 +99,7 @@ services:
     volumes:
       - ./nginx/templates:/etc/nginx/templates
       - ./logs/nginx:/var/log/nginx
-    env)file:
+    env_file:
       - ./config/nginx.env
     depends_on: 
       - jdgetcookies
