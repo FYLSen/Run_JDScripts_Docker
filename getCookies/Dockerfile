@@ -10,8 +10,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
     && python -m pip install --upgrade pip \
     && python -m pip install uwsgi uwsgi-python3 \
     && rm -rf /var/cache/apk/* \
-    && echo "Asia/Shanghai" > /etc/timezone && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-    && mkdir getCookies
+    && echo "Asia/Shanghai" > /etc/timezone && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 COPY ./getCookies /getCookies
 WORKDIR /getCookies

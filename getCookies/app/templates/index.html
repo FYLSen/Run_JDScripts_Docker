@@ -1,11 +1,42 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Index Page</title>
-  </head>
-  <body>
-    <br />
+
+<head>
+  <meta charset="utf-8">
+  <title>WYZ</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    div.container {
+      background: #888;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      border: 0;
+      margin: 0;
+      padding: 0;
+      max-width: 590px;
+      width: e-xpression(this.width>590?"590px":this.width);
+      max-height: 590px;
+      height: e-xpression(this.height>590?"590px":this.height);
+    }
+  </style>
+</head>
+
+<body>
+  <br />
+  <div class="container">
     <img src="{{message['qr_base64']}}" alt="{{message['okl_token']}}">
-  </body>
+  </div>
+</body>
+
 </html>
