@@ -13,7 +13,6 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
     && mkdir App
 
 WORKDIR /
-RUN python3 -m pip install --upgrade -r /App/requirements.txt
 
 EXPOSE ${PORT}
 
