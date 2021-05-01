@@ -92,7 +92,7 @@ services:
       - ./getCookies:/App
     networks:
       - jdcookies
-  nginx:
+  jdnginx:
     image: nginx
     container_name: jdnginx
     restart: always
