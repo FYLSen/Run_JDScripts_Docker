@@ -1,0 +1,9 @@
+server {
+    listen       ${PORT};
+    listen  [::]:${PORT};
+    server_name  ${HOST};
+    
+    location / {
+       proxy_pass http://${APP_CONTAINER_NAME}:${APP_CONTAINER_PORT};
+     }
+}

@@ -76,6 +76,36 @@ services:
     volumes:
       - ./getShareCodes/.ssh:/root/.ssh
       - ./logs:/logs
+  jdgetcookies:
+    container_name: jdgetcookies
+    image: jdgetcookies:latest
+    build: 
+      context: .
+      dockerfile: ./getCookies/Dockerfile
+    restart: always
+    ports: 33521:33521
+    env_file:
+      - ./config/getCookies.env
+    volumes:
+      - ./config:/config
+    networks:
+      - jdcookies
+  nginx:
+    image: nginx
+    container_name: jdnginx
+    restart: always
+    ports: 
+      - 80:80
+    volumes:
+      - ./nginx/templates:/etc/nginx/templates
+      - ./logs/nginx:/var/log/nginx
+    env)file:
+      - ./config/nginx.env
+    depends_on: 
+      - jdgetcookies
+    networks: 
+      - jdcookies
+     
   jdsublimtcodes:
     container_name: jdsubmitcodes
     image: jdsubmitcodes:latest
@@ -87,3 +117,6 @@ services:
       - ./submitShareCodes/TelegramCLI:/home/telegramd/.telegram-cli
     
           
+networks:
+  jdcookies:
+    driver: bridge
