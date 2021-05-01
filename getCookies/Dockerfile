@@ -18,4 +18,6 @@ COPY /getCookies/views /App/views
 COPY /getCookies/getJDCookie.py /App/getJDCookie.py
 RUN python3 -m pip install --upgrade -r /App/requirements.txt
 
+EXPOSE ${port}
+
 CMD ["python3", "/App/getJDCookie.py"]

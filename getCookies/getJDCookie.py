@@ -260,7 +260,7 @@ def index():
 
 if __name__ == '__main__':
     
-    run(host = 'localhost', port = os.environ.get('port'))
+    run(host = 'localhost', port = int(os.environ.get('port')) || 33521)
     
 
     
