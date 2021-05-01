@@ -13,11 +13,8 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
     && mkdir App
 
 WORKDIR /
-COPY /getCookies/requirements.txt /App/requirements.txt
-COPY /getCookies/views /App/views
-COPY /getCookies/getJDCookie.py /App/getJDCookie.py
 RUN python3 -m pip install --upgrade -r /App/requirements.txt
 
-EXPOSE ${port}
+EXPOSE ${PORT}
 
-CMD ["python3", "/App/getJDCookie.py"]
+CMD ["sh", "/App/run.sh"]

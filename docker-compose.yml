@@ -83,11 +83,13 @@ services:
       context: .
       dockerfile: ./getCookies/Dockerfile
     restart: always
-    ports: 33521:33521
+    ports: 
+      - 33521:33521
     env_file:
       - ./config/getCookies.env
     volumes:
       - ./config:/config
+      - ./getCookies:/App
     networks:
       - jdcookies
   nginx:
