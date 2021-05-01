@@ -1,6 +1,6 @@
 from PIL import Image
 import qrcode, requests, base64, time, re, os, multiprocessing, sys
-from bottle import route, run
+from bottle import route, run, template
 
 def getEnv():
     return {
@@ -207,7 +207,7 @@ def getCookieFilesInfo(pt_pin, pt_key, filePath):
 
     if findKey:
         for cki in cookiesFileInfo:
-            if cki['pt_pin'] = pt_pin:
+            if cki['pt_pin'] == pt_pin:
                 cki['pt_key'] = pt_key
     else:
         cookiesFileInfo.append({'id': len(cookiesFileInfo), 'pt_key': pt_key, 'pt_pin': pt_pin})
@@ -255,13 +255,12 @@ def index():
     p.start()
     time.sleep(1)
     messageInfo = message.get(True)
-    
-    return '<img id="myImage" src="%s" />' % qr_base64
+
     return template('index',message = messageInfo)
 
 if __name__ == '__main__':
     
-    run(host = 'localhost', port = 33521)
+    run(host = 'localhost', port = os.environ.get('port'))
     
 
     
