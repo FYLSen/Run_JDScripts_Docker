@@ -4,7 +4,7 @@ server {
     server_name  ${HOST};
     
     location / {
-       include /etc/nginx/uwsgi_params;
-       uwsgi_pass http://${APP_CONTAINER_NAME}:${APP_CONTAINER_PORT};
+       include uwsgi_params;
+       uwsgi_pass ${APP_CONTAINER_NAME}:${APP_CONTAINER_PORT};
      }
 }

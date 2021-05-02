@@ -1,11 +1,15 @@
 #!/bin/python3
 # -*- coding:utf-8 -*-
 
-import requests, time, os, multiprocessing, sys
+import requests, time, os, multiprocessing, sys, logging
 from flask import Flask, render_template
 import jdCookies.cookies as cks
 
 app = Flask(__name__)
+
+logger = logging.getLogger('werkzeug')
+handler = logging.FileHandler('flask.log')
+logger.addHandler(handler)
 
 def getEnv():
     return {
@@ -26,6 +30,7 @@ def saveCookies(message):
     for item in env['container']:
         filePath.append('/config/%s/cookies.sh' % item)
     cookiesFileInfo, thepath = cks.getCookieFilesInfo(pt_pin, pt_key, filePath)
+    logger.info("cookie文件路径：" + filePath)
 
     cks.saveFiles(cookiesFileInfo, thepath, env['masterPtPin'])
 
