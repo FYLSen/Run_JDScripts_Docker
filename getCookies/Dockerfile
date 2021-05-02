@@ -18,4 +18,4 @@ RUN sed -i 's/^\(deb\|deb-src\) \([^ ]*\) \(.*\)/\1 http:\/\/mirrors.ustc.edu.cn
 
 EXPOSE ${PORT}
 
-CMD uwsgi --init uwsgi.ini
+CMD ["uwsgi", "--init", "uwsgi.ini"]
