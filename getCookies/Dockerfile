@@ -2,7 +2,7 @@ FROM ubuntu:20.04 AS builder
 COPY getCookies/requirements.txt /requirements.txt
 WORKDIR /
 RUN sed -i 's/^\(deb\|deb-src\) \([^ ]*\) \(.*\)/\1 http:\/\/mirrors.ustc.edu.cn\/ubuntu \3/' /etc/apt/sources.list \
-    && apt update && apt install --no-cache curl python3 \
+    && apt update && apt install -y curl python3 \
     && apt install -y libxml2-dev libxslt-dev libffi-dev gcc musl-dev libgcc openssl-dev \
     && apt install -y jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev tiff-dev tk-dev tcl-dev \
     && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python get-pip.py \
