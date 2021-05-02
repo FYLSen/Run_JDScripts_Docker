@@ -2,7 +2,7 @@ FROM ubuntu:20.04 AS builder
 COPY getCookies/requirements.txt /requirements.txt
 WORKDIR /
 RUN sed -i 's/^\(deb\|deb-src\) \([^ ]*\) \(.*\)/\1 http:\/\/mirrors.ustc.edu.cn\/ubuntu \3/' /etc/apt/sources.list \
-    && apt update && apt install -y curl python3 \
+    && apt update && apt install -y curl python3 python3-distutils \
     && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-pip.py \
     && python3 -m pip install -i https://mirrors.ustc.edu.cn/pypi/web/simple pip -U \
     && python3 -m pip config set global.index-url https://mirrors.ustc.edu.cn/pypi/web/simple \
