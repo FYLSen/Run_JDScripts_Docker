@@ -1,4 +1,4 @@
-FROM ubuntu:20.04 AS builder
+FROM ubuntu:20.04
 COPY getCookies/requirements.txt /requirements.txt
 WORKDIR /
 ENV DEBIAN_FRONTEND="noninteractive"
