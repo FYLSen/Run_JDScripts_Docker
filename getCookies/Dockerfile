@@ -3,6 +3,7 @@ COPY getCookies/requirements.txt /requirements.txt
 WORKDIR /
 RUN sed -i 's/^\(deb\|deb-src\) \([^ ]*\) \(.*\)/\1 http:\/\/mirrors.ustc.edu.cn\/ubuntu \3/' /etc/apt/sources.list \
     && apt update && apt install -y curl python3 \
+    && ln -s /usr/bin/python3 /usr/bin/python \
     && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python get-pip.py \
     && python -m pip install -i https://mirrors.ustc.edu.cn/pypi/web/simple pip -U \
     && python -m pip config set global.index-url https://mirrors.ustc.edu.cn/pypi/web/simple \
@@ -15,6 +16,7 @@ ENV DEBIAN_FRONTEND="noninteractive"
 COPY --from=builder /usr/local/lib /usr/local/lib
 RUN sed -i 's/^\(deb\|deb-src\) \([^ ]*\) \(.*\)/\1 http:\/\/mirrors.ustc.edu.cn\/ubuntu \3/' /etc/apt/sources.list \
     && apt update && apt install -y tzdata python3 uwsgi-plugin-python3 \
+    && ln -s /usr/bin/python3 /usr/bin/python \
     && echo "Asia/Shanghai" > /etc/timezone && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && mkdir getCookies
 
