@@ -16,8 +16,8 @@ ENV DEBIAN_FRONTEND="noninteractive"
 COPY --from=builder /usr/local/lib /usr/local/lib
 RUN sed -i 's/^\(deb\|deb-src\) \([^ ]*\) \(.*\)/\1 http:\/\/mirrors.ustc.edu.cn\/ubuntu \3/' /etc/apt/sources.list \
     && apt update && apt install -y tzdata python3 uwsgi-plugin-python3 \
-    && echo "Asia/Shanghai" > /etc/timezone && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-    && mkdir getCookies
+    && ln -s /usr/bin/python3 /usr/bin/python \
+    && echo "Asia/Shanghai" > /etc/timezone && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 COPY getCookies/ /getCookies
 WORKDIR /getCookies
 EXPOSE ${PORT}
