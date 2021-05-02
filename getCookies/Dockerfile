@@ -2,7 +2,7 @@ FROM python:3.9.4-slim AS builder
 
 COPY getCookies/requirements.txt /requirements.txt
 WORKDIR /
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
+RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
     && apt update && apt install --no-cache curl \
     && apt install --no-cache libxml2-dev libxslt-dev libffi-dev gcc musl-dev libgcc openssl-dev \
     && apt install --no-cache jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev tiff-dev tk-dev tcl-dev \
@@ -14,10 +14,10 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
     && python -m pip install --upgrade -r requirements.txt
 
 
-FROM python:3.9.4-alpine3.13
+FROM python:3.9.4-slim
 
 COPY --from=builder /usr/local/lib /usr/local/lib
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
+RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
     && apt update && apt install --no-cache tzdata uwsgi-plugin-python3 \
     && echo "Asia/Shanghai" > /etc/timezone && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && mkdir getCookies
