@@ -18,4 +18,5 @@ RUN sed -i 's/^\(deb\|deb-src\) \([^ ]*\) \(.*\)/\1 http:\/\/mirrors.ustc.edu.cn
 
 EXPOSE ${PORT}
 
-CMD ["uwsgi", "--init", "uwsgi.ini"]
+CMD ["uwsgi", "--http :33521", "--wsgi-file", "app/getJDCookie.py", "--master", "--processes 4", "--threads 2", "--stats 127.0.0.1:9191"]
+
