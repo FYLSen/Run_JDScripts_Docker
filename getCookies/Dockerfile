@@ -1,22 +1,16 @@
 FROM ubuntu:20.04 AS builder
 COPY getCookies/requirements.txt /requirements.txt
 WORKDIR /
+ENV DEBIAN_FRONTEND="noninteractive"
 RUN sed -i 's/^\(deb\|deb-src\) \([^ ]*\) \(.*\)/\1 http:\/\/mirrors.ustc.edu.cn\/ubuntu \3/' /etc/apt/sources.list \
-    && apt update && apt install -y curl python3 python3-distutils python3-dev gcc \
+    && apt update && apt install -y curl tzdata python3 python3-distutils uwsgi-plugin-python3 python3-dev gcc \
     && ln -s /usr/bin/python3 /usr/bin/python \
     && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-pip.py \
     && python -m pip install -i https://mirrors.ustc.edu.cn/pypi/web/simple pip -U \
     && python -m pip config set global.index-url https://mirrors.ustc.edu.cn/pypi/web/simple \
     && python -m pip install --upgrade pip \
     && python -m pip install uwsgi \
-    && python -m pip install --upgrade -r requirements.txt
-
-FROM ubuntu:20.04
-ENV DEBIAN_FRONTEND="noninteractive"
-COPY --from=builder /usr/local/lib /usr/local/lib
-RUN sed -i 's/^\(deb\|deb-src\) \([^ ]*\) \(.*\)/\1 http:\/\/mirrors.ustc.edu.cn\/ubuntu \3/' /etc/apt/sources.list \
-    && apt update && apt install -y tzdata python3 uwsgi-plugin-python3 \
-    && ln -s /usr/bin/python3 /usr/bin/python \
+    && python -m pip install --upgrade -r requirements.txt \
     && echo "Asia/Shanghai" > /etc/timezone && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 COPY getCookies/ /getCookies
 WORKDIR /getCookies
