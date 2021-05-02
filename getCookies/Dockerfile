@@ -1,7 +1,10 @@
 FROM ubuntu:20.04
-COPY getCookies/requirements.txt /requirements.txt
-WORKDIR /
+
+COPY getCookies/ /getCookies
+WORKDIR /getCookies
+
 ENV DEBIAN_FRONTEND="noninteractive"
+
 RUN sed -i 's/^\(deb\|deb-src\) \([^ ]*\) \(.*\)/\1 http:\/\/mirrors.ustc.edu.cn\/ubuntu \3/' /etc/apt/sources.list \
     && apt update && apt install -y curl tzdata python3 python3-distutils uwsgi-plugin-python3 python3-dev gcc \
     && ln -s /usr/bin/python3 /usr/bin/python \
@@ -12,7 +15,7 @@ RUN sed -i 's/^\(deb\|deb-src\) \([^ ]*\) \(.*\)/\1 http:\/\/mirrors.ustc.edu.cn
     && python -m pip install uwsgi \
     && python -m pip install --upgrade -r requirements.txt \
     && echo "Asia/Shanghai" > /etc/timezone && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-COPY getCookies/ /getCookies
-WORKDIR /getCookies
+
 EXPOSE ${PORT}
-CMD ["uwsgi", "--init", "uwsgi.ini"]
+
+CMD uwsgi --init uwsgi.ini
