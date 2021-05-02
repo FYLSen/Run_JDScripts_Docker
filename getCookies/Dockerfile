@@ -1,9 +1,8 @@
-FROM python:3.9.4-slim AS builder
-
+FROM ubuntu:20.04 AS builder
 COPY getCookies/requirements.txt /requirements.txt
 WORKDIR /
-RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
-    && apt update && apt install --no-cache curl \
+RUN sed -i 's/^\(deb\|deb-src\) \([^ ]*\) \(.*\)/\1 http:\/\/mirrors.ustc.edu.cn\/ubuntu \3/' /etc/apt/sources.list \
+    && apt update && apt install --no-cache curl python3 \
     && apt install --no-cache libxml2-dev libxslt-dev libffi-dev gcc musl-dev libgcc openssl-dev \
     && apt install --no-cache jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev tiff-dev tk-dev tcl-dev \
     && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python get-pip.py \
@@ -13,17 +12,14 @@ RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
     && python -m pip install uwsgi \
     && python -m pip install --upgrade -r requirements.txt
 
-
-FROM python:3.9.4-slim
-
+FROM ubuntu:20.04
+ENV DEBIAN_FRONTEND="noninteractive"
 COPY --from=builder /usr/local/lib /usr/local/lib
-RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
-    && apt update && apt install --no-cache tzdata uwsgi-plugin-python3 \
+RUN sed -i 's/^\(deb\|deb-src\) \([^ ]*\) \(.*\)/\1 http:\/\/mirrors.ustc.edu.cn\/ubuntu \3/' /etc/apt/sources.list \
+    && apt update && apt install --no-cache tzdata python3 uwsgi-plugin-python3 \
     && echo "Asia/Shanghai" > /etc/timezone && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && mkdir getCookies
 
 COPY getCookies/ /getCookies
 WORKDIR /getCookies
 EXPOSE ${PORT}
-
-CMD ["uwsgi", "uwsgi.ini"]
