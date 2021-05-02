@@ -5,6 +5,6 @@ server {
     
     location / {
        include uwsgi_params;
-       uwsgi_pass http://${APP_CONTAINER_NAME}:${APP_CONTAINER_PORT};
+       proxy_pass http://${APP_CONTAINER_NAME}:${APP_CONTAINER_PORT};
      }
 }
