@@ -89,7 +89,7 @@ services:
       - ./config/getCookies.env
     volumes:
       - ./config:/config
-      - ./logs/uwsgi:/logs
+      - ./logs/flask:/logs
     networks:
       - jdcookies
   jdnginx:
