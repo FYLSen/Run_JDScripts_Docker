@@ -110,7 +110,7 @@ def checkLogin(session, loginInfo, qrInfo):
 def getHeaders(session, loginInfo, qrInfo):
     startTime = time.time()
     while True:
-        if time.time() - startTime > 60:
+        if time.time() - startTime > 65:
             break
         try:
             data, headers = checkLogin(session, loginInfo, qrInfo)
@@ -134,6 +134,7 @@ def getHeaders(session, loginInfo, qrInfo):
 
         except Exception as e:
             print('getCookie_Error:', e)
+    return ''
 
 def formatCookie(headers):
     setCookie = headers['Set-Cookie'].split(';')
