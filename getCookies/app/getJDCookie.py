@@ -1,15 +1,11 @@
 #!/bin/python3
 # -*- coding:utf-8 -*-
 
-import requests, time, os, multiprocessing, sys, logging
+import requests, time, os, multiprocessing
 from flask import Flask, render_template
 import jdCookies.cookies as cks
 
 app = Flask(__name__)
-
-logger = logging.getLogger('werkzeug')
-handler = logging.FileHandler('/logs/flask.log')
-logger.addHandler(handler)
 
 def getEnv():
     return {
@@ -24,19 +20,16 @@ def saveCookies(message):
     message.put({'qr_base64': qr_base64,'okl_token':qrInfo['okl_token']})
     headers = cks.getHeaders(session, loginInfo, qrInfo)
     pt_key, pt_pin = cks.formatCookie(headers)
-    logger.info(pt_key + pt_pin)
 
     env = getEnv()
-    logger.info(env)
 
+    filePath = []
     for item in env['container']:
         filePath.append('/config/%s/cookies.sh' % item)
+
     cookiesFileInfo, thepath = cks.getCookieFilesInfo(pt_pin, pt_key, filePath)
-    logger.info("cookie文件路径：" + filePath)
 
     cks.saveFiles(cookiesFileInfo, thepath, env['masterPtPin'])
-
-    sys.exit()
 
 @app.route('/')
 def index():
@@ -45,7 +38,6 @@ def index():
     p.start()
     time.sleep(1)
     messageInfo = message.get(True)
-    logger.info(messageInfo)
 
     return render_template('index.html',message = messageInfo)
 

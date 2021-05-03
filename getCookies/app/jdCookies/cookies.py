@@ -1,7 +1,7 @@
 #!/bin/python3
 # -*- coding:utf-8 -*-
 from PIL import Image
-import qrcode, requests, base64, time, re, os, sys
+import qrcode, requests, base64, time, re, os
 
 def loginEntrance(session):
     url = 'https://plogin.m.jd.com/cgi-bin/mm/new_login_entrance?lang=chs&appid=300&returnurl=https://wq.jd.com/passport/LoginRedirect?state=%s&returnurl=https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport' % (time.time())
@@ -116,20 +116,17 @@ def getHeaders(session, loginInfo, qrInfo):
             if data['errcode'] == 0:
                 #登陆成功
                 print('[{}]'.format(time.strftime('%H:%M:%S')),data['message'])
-                """ pt_key, pt_pin = formatCookie(headers)
-                print('&%s;%s;' % pt_key, pt_pin)
-                sys.exit() """
                 return headers
             elif data['errcode'] == 21:
                 #二维码已失效
                 print('[{}]'.format(time.strftime('%H:%M:%S')),data['message'])
-                sys.exit()
+                os._exit(0)
             elif data['errcode'] == 176:
                 #等待扫码
                 print('[{}]'.format(time.strftime('%H:%M:%S')),data['message'])
             else:
                 print('其他异常：%s' % data)
-                sys.exit()
+                os._exit(0)
 
             time.sleep(3)
 
@@ -152,31 +149,32 @@ def getCookieFilesInfo(pt_pin, pt_key, filePath):
     thepath = ''
     oldcookies = ''
     findKey = False
-
+    #将读取全部config文件内容
     for fp in filePath:
         with open(fp, 'r') as f:
             ftext = f.read()
             fpInfo.append({'path': fp, 'data': ftext})
-
+    #使用pt_pin匹配配置文件内容，如果匹配失败则计算每个配置文件中的cookie数量
     for idx, val in enumerate(fpInfo):
         if pt_pin in val['data']:
             thepath = val['path']
             oldcookies = val['data']
             findKey = True
+            break
         temp = val['data'].split('\n')
         for t in temp:
             if t.startswith('JD_COOKIE='):
                 fpInfo[idx]['num'] = len(t.split('&'))
-
-    if not (thepath and oldcookies):
+    #当获取的cookie不在配置文件时，获取保存最少cookies的配置文件
+    if not findKey:
         min_idx = 0
         min_num = 0
         for idx,val in enumerate(fpInfo):
             min_num = val['num'] if idx == 0 else min_num
-            min_idx = idx if val['num'] <= min_num else min_idx
+            min_idx = idx if val['num'] < min_num else min_idx
         thepath = fpInfo[min_idx]['path']
         oldcookies = fpInfo[min_idx]['data']
-
+    #获取配置文件中cookie所使用的数字编号
     settingLine = oldcookies.split('\n')
     numList = []
     for item in settingLine:
@@ -188,8 +186,8 @@ def getCookieFilesInfo(pt_pin, pt_key, filePath):
                 tempList = re.findall(r'.+\$pt_pin(\d+);', t) if t.startswith('JD_COOKIE="pt_key=') else re.findall(r'.+\$pt_key(\d+);', t)
                 if tempList: numList = numList + tempList
             break
+    #配置文件中提取出对应的pt_key,pt_pin
     cookiesFileInfo = []
-
     for idx, val in enumerate(numList):
         cookiesFileInfo.insert(idx, {'id': idx, 'pt_key': '', 'pt_pin': ''})
         for item in settingLine:
@@ -199,7 +197,8 @@ def getCookieFilesInfo(pt_pin, pt_key, filePath):
                 cookiesFileInfo[idx]['pt_pin'] = re.sub('pt_pin%s=' % val, '', item)
             if cookiesFileInfo[idx]['pt_key'] and cookiesFileInfo[idx]['pt_pin']:
                 break
-
+    #当配置文件中存在新获取到的cookie时，替换数据；
+    #当配置文件中不存在获取到的cookie时，追加数据
     if findKey:
         for cki in cookiesFileInfo:
             if cki['pt_pin'] == pt_pin:
@@ -213,14 +212,13 @@ def saveFiles(cookiesFileInfo, path, masterPtPin):
     cookiesBody = ''
     cookiesBottom = ''
     for item in cookiesFileInfo:
-        cookiesBody = '%spt_key%s=%s;\npt_pin%s=%s;\n' % (cookiesBody, item['id'], item['pt_key'], item['id'], item['pt_pin'])
+        cookiesBody = '%spt_key%d=%s\npt_pin%d=%s\n' % (cookiesBody, item['id'], item['pt_key'], item['id'], item['pt_pin'])
     
         if item['pt_pin'] in masterPtPin:
-            cookiesBottom = '&%s' if cookiesBottom else cookiesBottom
-            cookiesBottom = 'pt_key=%s;pt_pin=%s;%s' % (item['pt_key'] + item['id'], item['pt_pin'] + item['id'], cookiesBottom) 
+            cookiesBottom = '&%s' % cookiesBottom if cookiesBottom else cookiesBottom
+            cookiesBottom = 'pt_key=$pt_key%d;pt_pin=$pt_pin%d;%s' % (item['id'], item['id'], cookiesBottom) 
         else:
-            cookiesBottom = '%s&' if cookiesBottom else cookiesBottom
-            cookiesBottom = '%spt_key=%s;pt_pin=%s;' % (cookiesBottom, item['pt_key'] + item['id'], item['pt_pin'] + item['id'])
-
+            cookiesBottom = '%s&' % cookiesBottom if cookiesBottom else cookiesBottom
+            cookiesBottom = '%spt_key=$pt_key%d;pt_pin=$pt_pin%d;' % (cookiesBottom, item['id'], item['id'])
     with open(path, 'w') as f:
         f.write('#!/bin/bash\n%sJD_COOKIE="%s"' % (cookiesBody, cookiesBottom))
