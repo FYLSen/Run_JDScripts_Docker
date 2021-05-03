@@ -26,6 +26,9 @@ def saveCookies(message):
     pt_key, pt_pin = cks.formatCookie(headers)
 
     env = getEnv()
+    
+    if pt_pin in env["masterPtPin"]:
+        env['container'] = ["jd1", "jd2", "jd3", "jd4", "jd5"]
 
     filePath = []
     for item in env['container']:
