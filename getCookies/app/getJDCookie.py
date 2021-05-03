@@ -28,7 +28,7 @@ def saveCookies(message):
     env = getEnv()
     
     if pt_pin in env["masterPtPin"]:
-        env['container'] = ["jd1", "jd2", "jd3", "jd4", "jd5"]
+        env['container'] = os.environ.get('MASTER_CONTAINER').split('&')
 
     filePath = []
     for item in env['container']:
