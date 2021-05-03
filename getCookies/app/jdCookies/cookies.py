@@ -108,8 +108,10 @@ def checkLogin(session, loginInfo, qrInfo):
 
 
 def getHeaders(session, loginInfo, qrInfo):
-    
+    startTime = time.time()
     while True:
+        if time.time() - startTime > 60:
+            break
         try:
             data, headers = checkLogin(session, loginInfo, qrInfo)
 
