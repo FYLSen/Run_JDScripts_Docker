@@ -20,6 +20,9 @@ def saveCookies(message):
     message.put({'qr_base64': qr_base64,'okl_token':qrInfo['okl_token']})
     headers = cks.getHeaders(session, loginInfo, qrInfo)
     pt_key, pt_pin = cks.formatCookie(headers)
+    
+    if not pt_key:
+        return pt_pin
 
     env = getEnv()
 
