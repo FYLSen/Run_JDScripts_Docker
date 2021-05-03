@@ -9,8 +9,7 @@ app = Flask(__name__)
 
 def getEnv():
     return {
-        "masterPtPin": os.environ.get('MASTERPtPin'),
-        "container": os.environ.get('CONTAINER_NAME').split('&')
+        "masterPtPin": os.environ.get('MASTERPtPin')
     }
     
 def saveCookies(message):
@@ -27,8 +26,7 @@ def saveCookies(message):
 
     env = getEnv()
     
-    if pt_pin in env["masterPtPin"]:
-        env['container'] = os.environ.get('MASTER_CONTAINER').split('&')
+    env['container'] = os.environ.get('MASTER_CONTAINER').split('&') if pt_pin in env["masterPtPin"] else os.environ.get('CONTAINER_NAME').split('&')
 
     filePath = []
     for item in env['container']:
