@@ -122,13 +122,13 @@ def getHeaders(session, loginInfo, qrInfo):
             elif data['errcode'] == 21:
                 #二维码已失效
                 print('[{}]'.format(time.strftime('%H:%M:%S')),data['message'])
-                os._exit(0)
+                break
             elif data['errcode'] == 176:
                 #等待扫码
                 print('[{}]'.format(time.strftime('%H:%M:%S')),data['message'])
             else:
                 print('其他异常：%s' % data)
-                os._exit(0)
+                break
 
             time.sleep(3)
 
