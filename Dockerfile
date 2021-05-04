@@ -18,4 +18,4 @@ RUN git clone $scriptsgiturl /scripts \
 
 RUN bash /Run_JDScripts_Docker/sync.sh
 
-CMD crontab -l && crond -f
+CMD ["crond", "-f"]

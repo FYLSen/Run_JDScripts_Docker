@@ -224,4 +224,4 @@ def saveFiles(cookiesFileInfo, path, masterPtPin):
             cookiesBottom = '%s&' % cookiesBottom if cookiesBottom else cookiesBottom
             cookiesBottom = '%spt_key=$pt_key%d;pt_pin=$pt_pin%d;' % (cookiesBottom, item['id'], item['id'])
     with open(path, 'w') as f:
-        f.write('#!/bin/bash\n%sJD_COOKIE="%s"' % (cookiesBody, cookiesBottom))
+        f.write('#!/bin/bash\n%sJD_COOKIE="%s"\n\n' % (cookiesBody, cookiesBottom))

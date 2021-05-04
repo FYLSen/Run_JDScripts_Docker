@@ -11,7 +11,7 @@ x-common: &common
     context: .
     dockerfile: ./Dockerfile
     args: 
-      - scriptsgiturl=
+      - scriptsgiturl=https://gitee.com/Rhysn/jd_scripts.git
   restart: always
   env_file: 
     - ./config/jdScripts.env

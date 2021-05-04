@@ -15,4 +15,4 @@ WORKDIR /
 
 RUN crontab /Run_JDScripts_Docker/getShareCodes/crontab.sh
     
-CMD crontab -l && crond -f
+CMD ["crond", "-f"]
