@@ -1,42 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>WYZ</title>
-  <style type="text/css">
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    div.container {
-      background: #888;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    img {
-      border: 0;
-      margin: 0;
-      padding: 0;
-      max-width: 590px;
-      width: e-xpression(this.width>590?"590px":this.width);
-      max-height: 590px;
-      height: e-xpression(this.height>590?"590px":this.height);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>Scan to get cookies</title>
+    <style>body{margin:0;padding:0;font-family:PingFang SC,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif}a,button.submit{color:#6e7173;text-decoration:none;-webkit-transition:all .1s ease-in;-moz-transition:all .1s ease-in;-o-transition:all .1s ease-in;transition:all .1s ease-in}a:hover,a:active{color:#6e7173}.scanbody{position:absolute;height:100%;width:100%;background:#fff;background-size:auto 100%}.body-about .scanbody{background:#fff}.scan-name{margin:0 auto;text-align:center;letter-spacing:2px;font-size:50px;line-height:1.35;font-weight:80;color:#f35626;background-image:-webkit-linear-gradient(92deg,#f35626,#feab3a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;-webkit-animation:hue 30s infinite linear}.scan-name h1{margin:0 0 10px;font-size:50px;line-height:1.2}.scantitle span{font-size:15px;width:2px}.scantitle p{font-size:20px;line-height:1.5;margin:0;color:#7b8993}.scaninfo{position:absolute;top:30%;text-align:center;width:100%;margin-top:-160px}.body-about .scaninfo{margin-top:-180px}#scanfooter{margin-top:30px;font-size:10px}.scanreload{margin-top:24px;display:inline-block;white-space:nowrap;cursor:pointer;letter-spacing:1px;font-size:14px;-moz-user-select:-moz-none;-webkit-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;text-shadow:none;border:2px solid #7b8993;line-height:36px;text-align:center;height:36px;padding:0 25px;border-radius:25px;background-color:#fff;color:#7b8993}.icon-about{padding:10px 0 25px}.icon-about a{font-size:20px;margin:5px;color:#fff;background-color:#000;border-radius:100%;padding:6px}@-webkit-keyframes hue{from{-webkit-filter:hue-rotate(0deg)}to{-webkit-filter:hue-rotate(-360deg)}}#qr{cursor:pointer;max-width:80%;max-height:80%;height:auto;zoom:expression(function(e){if(e.width>e.height){if(e.width>128){e.height=e.height*(128 /e.width);e.width=128}}else{if(e.height>128){e.width=e.width*(128 /e.height);e.height=128}}e.style.zoom='1'}(this));overflow:hidden}</style>
+    <script language="JavaScript">setTimeout(function(){var qrimagebox=document.getElementById("qrimagebox");qrimagebox.style.cssText="filter: blur(10px);-webkit-filter: blur(10px);-moz-filter: blur(10px);-ms-filter: blur(10px);filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='10');";qrimagebox.onclick=reloadPage;var refre=document.getElementById("refresh");refre.innerText="QR Code expired,Click Refresh";refre.onclick=reloadPage},55000);function reloadPage(){location.reload()};</script>
 </head>
 
 <body>
-  <br />
-  <div class="container">
-    <img src="{{message['qr_base64']}}" alt="{{message['okl_token']}}">
-  </div>
+    <div class="scanbody">
+        <div class="scaninfo">
+            <header id="scanheader" class="clearfix">
+                <div class="scan-name">Scan to get cookies</div>
+            </header>
+            <section>
+                <div class="scantitle">
+                <div id="qrimagebox">
+                    <img id="qr" src="{{message['qr_base64']}}" alt="{{message['okl_token']}}">
+                </div>
+                    <p>
+                        式微，式微！胡不归？
+                    </p>
+                </div><a href="#" id="refresh" class="scanreload" onclick="return false">Click Refresh</a>
+            </section>
+        </div>
+    </div>
 </body>
 
 </html>
