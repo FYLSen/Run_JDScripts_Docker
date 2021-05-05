@@ -44,7 +44,7 @@ def saveCookies(message):
     saveLogs(qrInfo['okl_token'], "success")
 
 def saveLogs(token, status):
-    logsPath = r'/logs/' + token
+    logsPath = r'/logs/%s.json' % token
     with open(logsPath, 'w') as f:
         f.write('{"status": "%s"}' % status)
 
