@@ -3,12 +3,8 @@ server {
     listen  [::]:${PORT};
     server_name  ${HOST};
     
-    location / {
+    location ^~ / {
        include uwsgi_params;
        uwsgi_pass ${APP_CONTAINER_NAME}:${APP_CONTAINER_PORT};
-     }
-    location ^~ /status {
-       include uwsgi_params;
-       uwsgi_pass ${APP_CONTAINER_NAME}:${APP_CONTAINER_PORT};
-     }
+    }
 }
