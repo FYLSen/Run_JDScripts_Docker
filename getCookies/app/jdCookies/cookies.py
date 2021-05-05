@@ -215,6 +215,7 @@ def saveFiles(cookiesFileInfo, path, masterPtPin):
     cookiesBody = ''
     cookiesBottom = ''
     for item in cookiesFileInfo:
+        if item['pt_key'] == item['pt_pin']: break
         cookiesBody = '%spt_key%d=%s\npt_pin%d=%s\n' % (cookiesBody, item['id'], item['pt_key'], item['id'], item['pt_pin'])
     
         if item['pt_pin'] in masterPtPin:
