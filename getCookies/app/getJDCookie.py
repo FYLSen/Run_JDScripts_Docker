@@ -58,15 +58,6 @@ def index():
 
     return render_template('index.html',message = messageInfo)
 
-@app.route('/status/token')
-def getstatus(name):
-    statusdir = '/logs/flask/%s.json' % token
-    if os.path.exists(statusdir):
-        with open(statusdir, 'r') as f:
-            return f.read()
-    else:
-        return {'status': 'waitting'}
-
 if __name__ == '__main__':
 
     app.run()

@@ -101,6 +101,7 @@ services:
     volumes:
       - ./nginx/templates:/etc/nginx/templates
       - ./logs/nginx:/var/log/nginx
+      - ./logs/flask:/data/status
     env_file:
       - ./config/nginx.env
     depends_on: 
