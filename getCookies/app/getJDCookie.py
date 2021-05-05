@@ -50,7 +50,7 @@ def saveLogs(token, status):
 
 @app.route('/status/<token>')
 def getstatus(token):
-    statusdir = '/logs/flask/%s.json' % token
+    statusdir = '/logs/%s.json' % token
     try:
         with open(statusdir, 'r') as f:
             jsonStr = json.load(f)
