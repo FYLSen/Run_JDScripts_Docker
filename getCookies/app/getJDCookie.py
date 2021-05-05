@@ -20,8 +20,11 @@ def saveCookies(message):
     headers = cks.getHeaders(session, loginInfo, qrInfo)
     
     if not headers:
+        saveLogs(qrInfo['okl_token'], "error")
         return '获取Cookie失败'
-    
+
+    saveLogs(qrInfo['okl_token'], "getsuccess")
+
     pt_key, pt_pin = cks.formatCookie(headers)
 
     env = getEnv()
@@ -32,9 +35,18 @@ def saveCookies(message):
     for item in env['container']:
         filePath.append('/config/%s/cookies.sh' % item)
 
+    saveLogs(qrInfo['okl_token'], "writing")
+
     cookiesFileInfo, thepath = cks.getCookieFilesInfo(pt_pin, pt_key, filePath)
 
     cks.saveFiles(cookiesFileInfo, thepath, env['masterPtPin'])
+
+    saveLogs(qrInfo['okl_token'], "success")
+
+def saveLogs(token, status):
+    logsPath = r'/logs/' + token
+    with open(logsPath, 'w') as f:
+        f.write('{"status": "%s"}' % status)
 
 @app.route('/')
 def index():
@@ -46,6 +58,14 @@ def index():
 
     return render_template('index.html',message = messageInfo)
 
+@app.route('/status/<path:token>')
+def getstatus(name):
+    statusdir = '/logs/flask/%s.json' % token
+    if os.path.exists(statusdir):
+        with open(statusdir, 'r') as f:
+            return f.read()
+    else:
+        return {'status': 'waitting'}
 
 if __name__ == '__main__':
 
