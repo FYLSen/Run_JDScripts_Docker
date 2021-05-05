@@ -48,6 +48,15 @@ def saveLogs(token, status):
     with open(logsPath, 'w') as f:
         f.write('{"status": "%s"}' % status)
 
+@app.route('/status/<path:token>')
+def getstatus(token):
+    statusdir = '/logs/flask/%s.json' % token
+    if os.path.exists(statusdir):
+        with open(statusdir, 'r') as f:
+            return f.read()
+    else:
+        return {'status': 'waitting'}
+
 @app.route('/')
 def index():
     message = multiprocessing.Queue()
