@@ -1,7 +1,7 @@
 #!/bin/python3
 # -*- coding:utf-8 -*-
 
-import requests, time, os, multiprocessing
+import requests, time, os, multiprocessing, json
 from flask import Flask, render_template
 import jdCookies.cookies as cks
 
@@ -48,13 +48,14 @@ def saveLogs(token, status):
     with open(logsPath, 'w') as f:
         f.write('{"status": "%s"}' % status)
 
-@app.route('/status/<path:token>')
+@app.route('/status/<token>')
 def getstatus(token):
     statusdir = '/logs/flask/%s.json' % token
-    if os.path.exists(statusdir):
+    try:
         with open(statusdir, 'r') as f:
-            return f.read()
-    else:
+            jsonStr = json.load(f)
+            return json.dumps(jsonStr)
+    except FileNotFoundError:
         return {'status': 'waitting'}
 
 @app.route('/')
