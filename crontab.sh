@@ -16,7 +16,7 @@
 18 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_crazy_joy_coin.js > /logs/jd_crazy_joy_coin.log 2>&1 | sed 's/^/ 【疯狂Joy挂机】/'; "
 40 */2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_moneyTree.js > /logs/jd_moneyTree.log 2>&1 | sed 's/^/ 【京东摇钱树】/'; "
 15 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_joy_feedPets.js > /logs/jd_joy_feedPets.log 2>&1 | sed 's/^/ 【宠汪汪喂食脚本】/'; "
-15 15 9-31 5 * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/adolf_haier.js > /logs/adolf_haier..log 2>&1 | sed 's/^/ 【海尔_欢乐大逃亡】/'; "
+#15 15 9-31 5 * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/adolf_haier.js > /logs/adolf_haier..log 2>&1 | sed 's/^/ 【海尔_欢乐大逃亡】/'; "
 4 */4 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_superMarket.js > /logs/jd_superMarket.log 2>&1 | sed 's/^/ 【东东超市】/'; "
 39 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_pigPet.js > /logs/jd_pigPet.log 2>&1 | sed 's/^/ 【金融养猪】/'; "
 #1-46/15 */3 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_priceProtect.js > /logs/jd_priceProtect.log 2>&1 | sed 's/^/ 【价格保护】/'; "
