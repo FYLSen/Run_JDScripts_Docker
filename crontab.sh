@@ -25,6 +25,7 @@
 8 0,20 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_necklace.js > /logs/jd_necklace.log 2>&1 | sed 's/^/ 【点点券】/'; "
 14 10,16 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_try.js > /logs/jd_try.log 2>&1 | sed 's/^/ 【京东试用】/'; "
 15 8,13,18 17-31 5 * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/adolf_pk.js > /logs/adolf_pk.log 2>&1 | sed 's/^/ 【京享值PK】/'; "
+25 9 * 5,6 * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/adolf_oneplus.js > /logs/adolf_oneplus.log 2>&1 | sed 's/^/ 【一加手机】/'; "
 37 */2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/monk_pasture.js > /logs/monk_pasture.log 2>&1 | sed 's/^/ 【有机牧场】/'; "
 15 9 * 5,6 * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/adolf_flp.js > /logs/adolf_flp.log 2>&1 | sed 's/^/ 【飞利浦电视成长】/'; "
 1-59/23 0,5 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/JD_DailyBonus.js > /logs/JD_DailyBonus.log 2>&1 | sed 's/^/ 【京豆签到脚本】/'; "
