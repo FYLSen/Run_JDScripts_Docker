@@ -94,7 +94,7 @@
         {
             "name": "手机狂欢城",
             "filename": "jd_carnivalcity.log",
-            "status": "dead",
+            "status": "daily",
             "pattern": "【京东账号.+的京东手机狂欢城好友互助码】(.+)",
             "envname": "JD818_SHARECODES",
             "submitname": "jd_carnivalcity"
