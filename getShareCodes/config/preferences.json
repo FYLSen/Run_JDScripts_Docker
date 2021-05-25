@@ -1,5 +1,5 @@
 {
-    "date": "2021-04-18",
+    "date": "2021-05-28",
     "editor": "Rhysn",
     "status": "active/dead/daily",
     "data": [
@@ -114,6 +114,14 @@
             "pattern": "【京东账号.+的东东小窝好友互助码】(.+)",
             "envname": "JD818_SHARECODES",
             "submitname": "jd_small_home"
+        },
+        {
+            "name": "618动物城",
+            "filename": "jd_zoo.log",
+            "status": "daily",
+            "pattern": "您的商圈助力码：(.+)",
+            "envname": "JD_ZOOPKSHARECODES",
+            "submitname": "jd_zooPKShareCode.txt"
         }
     ]
 }
