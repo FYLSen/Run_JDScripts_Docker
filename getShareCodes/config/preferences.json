@@ -119,7 +119,7 @@
             "name": "618动物城",
             "filename": "jd_zoo.log",
             "status": "daily",
-            "pattern": "您的商圈助力码：(.+)",
+            "pattern": "您的队伍助力码：(.+)",
             "envname": "JD_ZOOPKSHARECODES",
             "submitname": "jd_zooPKShareCode.txt"
         }
