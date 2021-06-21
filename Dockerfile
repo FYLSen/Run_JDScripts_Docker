@@ -5,9 +5,10 @@ LABEL authors="Rhysn"
 ARG scriptsgiturl
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
-    && apk update && apk add --no-cache bash git wget tzdata nodejs npm curl moreutils \
+    && apk update && apk add --no-cache bash git wget tzdata nodejs npm curl moreutils build-base g++ cairo-dev pango-dev giflib-dev \
     && rm -rf /var/cache/apk/* \
-    && echo "Asia/Shanghai" > /etc/timezone && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && git config --global pull.ff only
+    && echo "Asia/Shanghai" > /etc/timezone && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && git config --global pull.ff only \
+    && npm install canvas --build-from-source
 
 WORKDIR /
 
