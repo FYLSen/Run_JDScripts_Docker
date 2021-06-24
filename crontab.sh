@@ -24,7 +24,7 @@
 0 */2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_djjl.js > /logs/jd_djjl.log 2>&1 | sed 's/^/ 【京东电竞经理】/'; "
 4 */4 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_superMarket.js > /logs/jd_superMarket.log 2>&1 | sed 's/^/ 【东东超市】/'; "
 39 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_pigPet.js > /logs/jd_pigPet.log 2>&1 | sed 's/^/ 【金融养猪】/'; "
-1-46/15 */3 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_priceProtect.js > /logs/jd_priceProtect.log 2>&1 | sed 's/^/ 【价格保护】/'; "
+#1-46/15 */3 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_priceProtect.js > /logs/jd_priceProtect.log 2>&1 | sed 's/^/ 【价格保护】/'; "
 #25 8,12 6-11 5 * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/adolf_oppo.js > /logs/adolf_oppo.log 2>&1 | sed 's/^/ 【刺客567之寻宝】/'; "
 15 9,20 * 5,6 * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/adolf_superbox.js > /logs/adolf_superbox.log 2>&1 | sed 's/^/ 【京东超级盒子】/'; "
 34 0,1 * 5,6 * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/adolf_newInteraction.js > /logs/adolf_newInteraction.log 2>&1 | sed 's/^/ 【618新品鉴赏】/'; "
