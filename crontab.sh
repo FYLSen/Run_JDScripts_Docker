@@ -36,6 +36,7 @@
 15 8,13,18 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/ddo_pk.js > /logs/ddo_pk.log 2>&1 | sed 's/^/ 【京享值PK】/'; "
 25 9,10 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_qjd.js > /logs/jd_qjd.log 2>&1 | sed 's/^/ 【全民抢京豆】/'; "
 10 0,6-23/1 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_summer_movement.js > /logs/jd_summer_movement.log 2>&1 | sed 's/^/ 【燃动夏季】/'; "
+12 6-23/1 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_summer_movement_help.js > /logs/jd_summer_movement_help.log 2>&1 | sed 's/^/ 【燃动夏季】/'; "
 0,15 0 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_NewSign.js > /logs/jd_NewSign.log 2>&1 | sed 's/^/ 【新登陆】/'; "
 13 1,16 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_gold_creator.js > /logs/jd_gold_creator.log 2>&1 | sed 's/^/ 【金榜创造营】/'; "
 28 9,16 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/star_dreamFactory_tuan.js > /logs/star_dreamFactory_tuan.log 2>&1 | sed 's/^/ 【惊喜梦工厂开团】/'; "
