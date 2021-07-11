@@ -14,18 +14,16 @@ def getEnv():
     
 def saveCookies(message):
     session = requests.Session()
-    loginInfo = cks.loginEntrance(session)
-    qrInfo, qr_base64 = cks.generateQrcode(session, loginInfo)
+    loginInfo = cks.token_get(session)
+    qrInfo, qr_base64 = cks.token_post(loginInfo, session)
     message.put({'qr_base64': qr_base64,'okl_token':qrInfo['okl_token']})
-    headers = cks.getHeaders(session, loginInfo, qrInfo)
+    pt_key, pt_pin = cks.check_token(qrInfo['token'], qrInfo['okl_token'], session)
     
-    if not headers:
+    if not pt_key:
         saveLogs(qrInfo['okl_token'], "error")
         return '获取Cookie失败'
 
     saveLogs(qrInfo['okl_token'], "getsuccess")
-
-    pt_key, pt_pin = cks.formatCookie(headers)
 
     env = getEnv()
     
