@@ -3,12 +3,7 @@
 from pickle import TRUE
 from PIL import Image
 import qrcode, requests, base64, time, re, os, json
-import logging
-requests.packages.urllib3.disable_warnings()
 from urllib.parse import urlencode, quote_plus
-
-logging.basicConfig(level=logging.INFO, format='%(message)s')
-logger = logging.getLogger(__name__)
 
 jd_ua = 'jdapp;android;10.0.5;11;0393465333165363-5333430323261366;network/wifi;model/M2102K1C;osVer/30;appBuild/88681;partner/lc001;eufv/1;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; M2102K1C Build/RKQ1.201112.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045534 Mobile Safari/537.36'
 
@@ -143,17 +138,14 @@ def check_token(token, okl_token, s, i = 1):
     code = check['errcode']
     message = check['message']
     while code == 0:
-        logger.info("扫码成功")
         jd_ck = s.cookies.get_dict()
         pt_key = str(jd_ck['pt_key'])
         pt_pin = str(jd_ck['pt_pin'])
         ck = str(pt_key) + ';' + str(pt_pin) + ';'
-        logger.info(ck)
         return pt_key, pt_pin
     else:
         i = i + 1
         if i < 60:
-            logger.info(message)
             time.sleep(3)
             return check_token(token, okl_token, s, i)
         else:
