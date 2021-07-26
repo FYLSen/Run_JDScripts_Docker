@@ -124,7 +124,7 @@ def generateQrcode(session, loginInfo):
         'okl_token': okl_token
     }, qr_base64
     
-def check_token(token, okl_token, s):
+def check_token(token, okl_token, s, i = 1):
     t = round(time.time() * 1000)
     headers = {
         'User-Agent': jd_ua,
@@ -142,12 +142,11 @@ def check_token(token, okl_token, s):
     check = json.loads(res.text)
     code = check['errcode']
     message = check['message']
-    i = 1
     while code == 0:
         logger.info("扫码成功")
         jd_ck = s.cookies.get_dict()
-        pt_key = 'pt_key=' + jd_ck['pt_key']
-        pt_pin = 'pt_pin=' + jd_ck['pt_pin']
+        pt_key = str(jd_ck['pt_key'])
+        pt_pin = str(jd_ck['pt_pin'])
         ck = str(pt_key) + ';' + str(pt_pin) + ';'
         logger.info(ck)
         return pt_key, pt_pin
@@ -156,7 +155,7 @@ def check_token(token, okl_token, s):
         if i < 60:
             logger.info(message)
             time.sleep(3)
-            check_token(token, okl_token)
+            return check_token(token, okl_token, s, i)
         else:
             return False, False
 
