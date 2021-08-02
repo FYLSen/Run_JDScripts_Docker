@@ -7,12 +7,12 @@ requests.packages.urllib3.disable_warnings()
 from urllib.parse import urlencode, quote_plus
 
 
-jd_ua = 'jdapp;android;10.0.5;11;0393465333165363-5333430323261366;network/wifi;model/M2102K1C;osVer/30;appBuild/88681;partner/lc001;eufv/1;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; M2102K1C Build/RKQ1.201112.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045534 Mobile Safari/537.36'
+jd_ua = 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 SP-engine/2.14.0 main/1.0 baiduboxapp/11.18.0.16 (Baidu; P2 13.3.1) NABar/0.0 TM/{0}'
 
 def token_get(s):
     t = round(time.time())
     headers = {
-        'User-Agent': jd_ua,
+        'User-Agent': jd_ua.format(t),
         'referer': 'https://plogin.m.jd.com/cgi-bin/mm/new_login_entrance?lang=chs&appid=300&returnurl=https://wq.jd.com/passport/LoginRedirect?state={0}&returnurl=https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport'.format(t)
     }
     t = round(time.time())
@@ -25,7 +25,7 @@ def token_get(s):
 def token_post(s_token, s):
     t = round(time.time() * 1000)
     headers = {
-        'User-Agent': jd_ua,
+        'User-Agent': jd_ua.format(t),
         'referer': 'https://plogin.m.jd.com/login/login?appid=300&returnurl=https://wqlogin2.jd.com/passport/LoginRedirect?state={0}&returnurl=//home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport'.format(t),
         'Content-Type': 'application/x-www-form-urlencoded; Charset=UTF-8'
     }
@@ -79,7 +79,7 @@ def generateQrcode(session, loginInfo):
       'Accept': 'application/json, text/plain, */*',
       'Accept-Language': 'zh-cn',
       'Referer': 'https://plogin.m.jd.com/login/login?appid=300&returnurl=https://wq.jd.com/passport/LoginRedirect?state=%s&returnurl=https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport' % (time.time()),
-      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36',
+      'User-Agent': jd_ua.format(t),
       'Host': 'plogin.m.jd.com'
     }
     try:
@@ -124,7 +124,7 @@ def generateQrcode(session, loginInfo):
 def check_token(token, okl_token, s, i = 1):
     t = round(time.time() * 1000)
     headers = {
-        'User-Agent': jd_ua,
+        'User-Agent': jd_ua.format(t),
         'referer': 'https://plogin.m.jd.com/login/login?appid=300&returnurl=https://wqlogin2.jd.com/passport/LoginRedirect?state={0}&returnurl=//home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&/myJd/home.action&source=wq_passport'.format(t),
         'Content-Type': 'application/x-www-form-urlencoded; Charset=UTF-8'
     }
