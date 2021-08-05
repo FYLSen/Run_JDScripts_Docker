@@ -34,7 +34,7 @@
 20 12,19 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_wishingPool.js > /logs/jd_wishingPool.log 2>&1 | sed 's/^/ 【众筹许愿池】/'; "
 #13-53/5 8-20 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_family.js > /logs/jd_family.log 2>&1 | sed 's/^/ 【京东家庭号】/'; "
 1 0 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_shop.js > /logs/jd_shop.log 2>&1 | sed 's/^/ 【进店领豆脚本】/'; "
-#30 10,12 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_superBrand.js > /logs/jd_superBrand.log 2>&1 | sed 's/^/ 【万物皆可国创】/'; "
+30 10,12 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_superBrand.js > /logs/jd_superBrand.log 2>&1 | sed 's/^/ 【万物皆可国创】/'; "
 8 0,20 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_necklace.js > /logs/jd_necklace.log 2>&1 | sed 's/^/ 【点点券】/'; "
 14 10,16 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_try.js > /logs/jd_try.log 2>&1 | sed 's/^/ 【京东试用】/'; "
 #15 13,18 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_ddopk.js > /logs/jd_ddopk.log 2>&1 | sed 's/^/ 【京享值PK】/'; "
