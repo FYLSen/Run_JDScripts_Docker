@@ -95,7 +95,8 @@
 11 */4 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /Run_JDScripts_Docker/ShareCodes/Default.sh; source /overall; source /env; source /cookies; node /scripts/jd_health.js > /logs/jd_health.log 2>&1 | sed 's/^/ 【东东健康社区】/'; "
 #15 */6 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /Run_JDScripts_Docker/ShareCodes/Default.sh; source /overall; source /env; source /cookies; node /scripts/jd_global.js > /logs/jd_global.log 2>&1 | sed 's/^/ 【环球挑战赛】/'; "
 # 动态邀请码脚本 >>
-#0,19 */6 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /ShareCodes/Temp.sh; source /overall; source /env; source /cookies; node /scripts/jd_carnivalcity.js > /logs/jd_carnivalcity.log 2>&1 | sed 's/^/ 【手机狂欢城】/'; "
+19 */6 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /ShareCodes/Temp.sh; source /overall; source /env; source /cookies; node /scripts/jd_carnivalcity_help.js > /logs/jd_carnivalcity_help.log 2>&1 | sed 's/^/ 【手机狂欢城助力】/'; "
+0 */6 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /ShareCodes/Temp.sh; source /overall; source /env; source /cookies; node /scripts/jd_carnivalcity.js > /logs/jd_carnivalcity.log 2>&1 | sed 's/^/ 【手机狂欢城】/'; "
 #33 */6 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /ShareCodes/Temp.sh; source /overall; source /env; source /cookies; node /scripts/z_carnivalcity.js > /logs/z_carnivalcity.log 2>&1 | sed 's/^/ 【手机狂欢城】/'; "
 #0 1-23/3 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /ShareCodes/Temp.sh; source /overall; source /env; source /cookies; node /scripts/jd_mohe.js > /logs/jd_mohe.log 2>&1 | sed 's/^/ 【5G魔盒】/'; "
 # 远程邀请码脚本 >>

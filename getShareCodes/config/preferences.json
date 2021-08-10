@@ -86,15 +86,15 @@
         {
             "name": "5G魔盒",
             "filename": "jd_mohe.log",
-            "status": "dead",
+            "status": "active",
             "pattern": "【京东账号.+的5G超级盲盒好友互助码】(.+)",
-            "envname": "BOOKSHOP_SHARECODES",
+            "envname": "jd_5g",
             "submitname": "jd_mohe"
         },
         {
             "name": "手机狂欢城",
             "filename": "jd_carnivalcity.log",
-            "status": "dead",
+            "status": "active",
             "pattern": "【京东账号.+的京东手机狂欢城好友互助码】(.+)",
             "envname": "JD818_SHARECODES",
             "submitname": "jd_carnivalcity"
