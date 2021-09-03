@@ -79,6 +79,7 @@
 9 */3,23 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_mohe.js > /logs/jd_mohe.log 2>&1 | sed 's/^/ 【5G魔盒】/'; "
 # 固定邀请码脚本 >>
 34 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /Run_JDScripts_Docker/ShareCodes/Default.sh; source /overall; source /env; source /cookies; node /scripts/jd_jdfactory.js > /logs/jd_jdfactory.log 2>&1 | sed 's/^/ 【东东工厂】/'; "
+15 0,12,22 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /Run_JDScripts_Docker/ShareCodes/Default.sh; source /overall; source /env; source /cookies; node /scripts/jd_lsj.js > /logs/jd_lsj.log 2>&1 | sed 's/^/ 【东东零食街】/'; "
 #0,16 0,22 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /Run_JDScripts_Docker/ShareCodes/Default.sh; source /overall; source /env; source /cookies; node /scripts/jd_city.js > /logs/jd_city.log 2>&1 | sed 's/^/ 【城城领现金】/'; "
 7-47/20 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /Run_JDScripts_Docker/ShareCodes/Default.sh; source /overall; source /env; source /cookies; node /scripts/jd_dreamFactory.js > /logs/jd_dreamFactory.log 2>&1 | sed 's/^/ 【京喜工厂】/'; "
 0 1,21 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /Run_JDScripts_Docker/ShareCodes/Default.sh; source /overall; source /env; source /cookies; node /scripts/jd_star_shop.js > /logs/jd_star_shop.log 2>&1 | sed 's/^/ 【明星小店】/'; "
