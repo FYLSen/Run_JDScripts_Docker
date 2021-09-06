@@ -7,7 +7,7 @@ requests.packages.urllib3.disable_warnings()
 from urllib.parse import urlencode, quote_plus
 
 
-jd_ua = 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5 UCBrowser/13.4.2.1122 TM/{0}'
+jd_ua = 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Safari/6533.18.5 UCBrowser/13.4.2.1122 TM/{0}'
 
 def token_get(s):
     t = round(time.time())
