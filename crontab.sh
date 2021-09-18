@@ -65,7 +65,7 @@
 11 6-22/8 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_lotteryMachine.js > /logs/jd_lotteryMachine.log 2>&1 | sed 's/^/ 【京东抽奖机】/'; "
 35 6-20/7 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_beauty.js > /logs/jd_beauty.log 2>&1 | sed 's/^/ 【美丽研究院】/'; "
 10,25 7 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_ms.js > /logs/jd_ms.log 2>&1 | sed 's/^/ 【京东秒秒币】/'; "
-33 0 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_qycl.js > /logs/jd_qycl.log 2>&1 | sed 's/^/ 【京东企业有礼】/'; "
+33 3,9,22 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_ddworld.js > /logs/jd_ddworld.log 2>&1 | sed 's/^/ 【东东世界】/'; "
 31,36 7 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_bean_home.js > /logs/jd_bean_home.log 2>&1 | sed 's/^/ 【任务京豆】/'; "
 37,42 7 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_car.js > /logs/jd_car.log 2>&1 | sed 's/^/ 【京东汽车】/'; "
 16 7,13 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jx_sign.js > /logs/jx_sign.log 2>&1 | sed 's/^/ 【京喜签到】/'; "
