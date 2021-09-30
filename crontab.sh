@@ -47,7 +47,7 @@
 13 1,16 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_gold_creator.js > /logs/jd_gold_creator.log 2>&1 | sed 's/^/ 【金榜创造营】/'; "
 #28 9,16 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/star_dreamFactory_tuan.js > /logs/star_dreamFactory_tuan.log 2>&1 | sed 's/^/ 【惊喜梦工厂开团】/'; "
 37 */2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/monk_pasture.js > /logs/monk_pasture.log 2>&1 | sed 's/^/ 【有机牧场】/'; "
-#31 1,10,18 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_qqxing.js > /logs/jd_qqxing.log 2>&1 | sed 's/^/ 【QQ星系牧场】/'; "
+13 0,11 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_jmsign.js > /logs/jd_jmsign.log 2>&1 | sed 's/^/ 【芥末签到】/'; "
 15 5,6,7 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_goodMorning.js > /logs/jd_goodMorning.log 2>&1 | sed 's/^/ 【早起福利】/'; "
 #26 0 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_msj.js > /logs/jd_msj.log 2>&1 | sed 's/^/ 【零食街】/'; "
 45 9,21 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_MMdou.js > /logs/jd_MMdou.log 2>&1 | sed 's/^/ 【MM豆】/'; "
