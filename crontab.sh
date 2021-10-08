@@ -41,7 +41,7 @@
 14 12,14 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_try_new.js > /logs/jd_try_new.log 2>&1 | sed 's/^/ 【京东试用】/'; "
 15 10,15,23 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/zy_ddwj.js > /logs/jd_ddwj.log 2>&1 | sed 's/^/ 【东东玩家】/'; "
 25 9,10 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_qjd.js > /logs/jd_qjd.log 2>&1 | sed 's/^/ 【全民抢京豆】/'; "
-31 2,8 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_mf.js > /logs/jd_mf.log 2>&1 | sed 's/^/ 【小魔方】/'; "
+31 2,14 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_mf.js > /logs/jd_mf.log 2>&1 | sed 's/^/ 【小魔方】/'; "
 #12 6-23/1 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_summer_movement_help.js > /logs/jd_summer_movement_help.log 2>&1 | sed 's/^/ 【燃动夏季】/'; "
 15,46 0,17 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_NewSign.js > /logs/jd_NewSign.log 2>&1 | sed 's/^/ 【新登陆】/'; "
 13 1,16 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_gold_creator.js > /logs/jd_gold_creator.log 2>&1 | sed 's/^/ 【金榜创造营】/'; "
