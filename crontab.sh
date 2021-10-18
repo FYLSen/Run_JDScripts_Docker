@@ -120,3 +120,6 @@
 #36 0,10,21 4-15 8 * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_qixi.js > /logs/jd_qixi.log 2>&1 | sed 's/^/ 【七夕情报局】/'; "
 #17 16 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_task_sharecode.js > /logs/jd_task_sharecode.log 2>&1 | sed 's/^/ 【获取活动分享码】/'; "
 #17 15 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_get_share_code.js > /logs/jd_get_share_code.log 2>&1 | sed 's/^/ 【获取活动邀请码】/'; "
+
+# 新脚本
+#0,10 8 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; ts-node /scripts/jd_getUp.ts > /logs/jd_getUp.log 2>&1 | sed 's/^/ 【早上领京豆】/'; "
