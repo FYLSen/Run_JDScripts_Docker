@@ -123,3 +123,5 @@
 
 # 新脚本
 #0,10 8 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; ts-node /scripts/jd_getUp.ts > /logs/jd_getUp.log 2>&1 | sed 's/^/ 【早上领京豆】/'; "
+#17 9,12 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; ts-node /scripts/jd_bean_box.ts > /logs/jd_bean_box.log 2>&1 | sed 's/^/ 【京东双签】/'; "
+#7 0,17 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; ts-node /scripts/jd_bean_sign.ts > /logs/jd_bean_signts.log 2>&1 | sed 's/^/ 【多合一签到】/'; "
