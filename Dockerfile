@@ -4,6 +4,8 @@ LABEL authors="Rhysn"
 
 ARG scriptsgiturl
 
+WORKDIR /
+
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
     && apk update && apk add --no-cache bash git wget tzdata nodejs npm curl moreutils build-base g++ cairo-dev pango-dev giflib-dev \
     && rm -rf /var/cache/apk/* \
@@ -12,12 +14,9 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
     && npm install canvas --build-from-source \
     && npm install typescript ts-node pm2
 
-WORKDIR /
-
 RUN git clone $scriptsgiturl /scripts \
     && git clone https://gitee.com/rhysn/Run_JDScripts_Docker.git /Run_JDScripts_Docker \
     && mkdir ShareCodes
-    
 
 RUN bash /Run_JDScripts_Docker/sync.sh
 
