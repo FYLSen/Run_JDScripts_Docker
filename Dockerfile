@@ -5,7 +5,7 @@ LABEL authors="Rhysn"
 ARG scriptsgiturl
 
 RUN sed -i 's/^\(deb\|deb-src\) \([^ ]*\) \(.*\)/\1 http:\/\/mirrors.ustc.edu.cn\/ubuntu \3/' /etc/apt/sources.list \
-    && apt update && apt add --no-cache bash git wget tzdata nodejs npm curl moreutils build-base g++ cairo-dev pango-dev giflib-dev \
+    && apt update && apt install -y bash git wget tzdata nodejs npm curl moreutils build-base g++ cairo-dev pango-dev giflib-dev \
     && echo "Asia/Shanghai" > /etc/timezone && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && npm install typescript ts-node pm2 \
     && npm install canvas --build-from-source
