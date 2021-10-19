@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM node:lts-alpine3.13
 
 LABEL authors="Rhysn"
 
