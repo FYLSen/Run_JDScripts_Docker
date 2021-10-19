@@ -11,8 +11,7 @@ RUN sed -i 's/^\(deb\|deb-src\) \([^ ]*\) \(.*\)/\1 http:\/\/mirrors.ustc.edu.cn
     && echo "Asia/Shanghai" > /etc/timezone && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && npm install -g npm \
     && npm config set registry=http://registry.npm.taobao.org \
-    && npm install -g typescript ts-node pm2 \
-    && npm install canvas --build-from-source
+    && npm install -g typescript ts-node pm2
 
 WORKDIR /
 
