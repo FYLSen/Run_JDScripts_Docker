@@ -4,6 +4,8 @@ LABEL authors="Rhysn"
 
 ARG scriptsgiturl
 
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN sed -i 's/^\(deb\|deb-src\) \([^ ]*\) \(.*\)/\1 http:\/\/mirrors.ustc.edu.cn\/ubuntu \3/' /etc/apt/sources.list \
     && apt update && apt install -y bash git wget tzdata nodejs npm curl moreutils \
     && echo "Asia/Shanghai" > /etc/timezone && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
