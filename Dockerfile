@@ -12,7 +12,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
     && echo "Asia/Shanghai" > /etc/timezone && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && git config --global pull.ff only \
     && npm config set registry https://registry.npm.taobao.org \
     && npm install canvas --build-from-source \
-    && npm install typescript ts-node pm2
+    && npm install -g typescript ts-node pm2
 
 RUN git clone $scriptsgiturl /scripts \
     && git clone https://gitee.com/rhysn/Run_JDScripts_Docker.git /Run_JDScripts_Docker \
