@@ -7,8 +7,10 @@ ARG scriptsgiturl
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN sed -i 's/^\(deb\|deb-src\) \([^ ]*\) \(.*\)/\1 http:\/\/mirrors.ustc.edu.cn\/ubuntu \3/' /etc/apt/sources.list \
-    && apt update && apt install -y  --fix-missing bash git wget tzdata nodejs npm curl moreutils cron \
+    && apt update && apt install -y --fix-missing bash git wget tzdata curl moreutils cron sudo \
     && echo "Asia/Shanghai" > /etc/timezone && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - \
+    && sudo apt-get install -y --fix-missing nodejs npm \
     && service cron start \
     && npm install -g npm \
     && npm config set registry=http://registry.npm.taobao.org \
