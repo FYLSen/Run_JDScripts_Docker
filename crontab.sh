@@ -133,7 +133,7 @@
 30 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_jxgc.js > /logs/jd_jxgc.log 2>&1 | sed 's/^/ 【京喜工厂ts】/'; "
 0 11,12 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_fruit_moreTask.js > /logs/jd_fruit_moreTask.log 2>&1 | sed 's/^/ 【东东农场更多任务】/'; "
 45 0-23/3 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_joy_park.js > /logs/jd_joy_park.log 2>&1 | sed 's/^/ 【汪汪乐园】/'; "
-30 0-23/3 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_qq_pasture.js > /logs/jd_qq_pasture.log 2>&1 | sed 's/^/ 【QQ牧场】/'; "
+#30 0-23/3 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_qq_pasture.js > /logs/jd_qq_pasture.log 2>&1 | sed 's/^/ 【QQ牧场】/'; "
 10 0,12,18 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_jxmcts.js > /logs/jd_jxmcts.log 2>&1 | sed 's/^/ 【惊喜牧场】/'; "
 3 0-23/2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_moneyTreets.js > /logs/jd_moneyTreets.log 2>&1 | sed 's/^/ 【京东摇钱树】/'; "
 8 0-23/3 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_yili_cow.js  >> /scripts/logs/jd_yili_cow.log 2>&1 | sed 's/^/ 【伊利牛】/'; "
