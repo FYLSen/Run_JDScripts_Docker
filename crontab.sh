@@ -131,7 +131,7 @@
 #17 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_cfd.ts > /logs/jd_cfdts.log 2>&1 | sed 's/^/ 【京喜财富岛】/'; "
 #10 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_cfd_hb.ts > /logs/jd_cfd_hb.log 2>&1 | sed 's/^/ 【京喜财富岛互幫】/'; "
 #0 0 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_cfd_withdraw.ts >> /scripts/logs/jd_cfd_withdraw.log 2>&1 | sed 's/^/ 【京喜财富岛提现3】/'; "
-#38 0 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_cfd_shell.ts > /logs/jd_cfd_shell.log 2>&1 | sed 's/^/ 【京喜财富岛提现2】/'; "
+0 */6 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_xtg.ts > /logs/jd_xtgts.log 2>&1 | sed 's/^/ 【京推官】/'; "
 #37 0 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_cfd_balloon.ts > /logs/jd_cfd_balloon.log 2>&1 | sed 's/^/ 【京喜财富岛提现1】/'; "
 30 */2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_jxgc.ts > /logs/jd_jxgc.log 2>&1 | sed 's/^/ 【京喜工厂ts】/'; "
 0 11,12 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_fruit_moreTask.ts > /logs/jd_fruit_moreTask.log 2>&1 | sed 's/^/ 【东东农场更多任务】/'; "
