@@ -11,6 +11,7 @@ RUN sed -i 's/^\(deb\|deb-src\) \([^ ]*\) \(.*\)/\1 http:\/\/mirrors.ustc.edu.cn
     && echo "Asia/Shanghai" > /etc/timezone && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - \
     && apt install -y nodejs \
+    && apt autoremove \
     && service cron start \
     && npm install -g npm \
     && npm config set registry=http://registry.npm.taobao.org \
