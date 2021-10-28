@@ -26,6 +26,7 @@
 35 1,6,12,21 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_jxlhb.js > /logs/jd_jxlhb.log 2>&1 | sed 's/^/ 【京喜领88元红包】/'; "
 13 5,16 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_haier.js > /logs/jd_haier.log 2>&1 | sed 's/^/ 【京东海尔小家电】/'; "
 #48 */12 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_zooMap.js > /logs/jd_zooMap.log 2>&1 | sed 's/^/ 【动物联萌店铺任务】/'; "
+0 */12,18 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /cookies; node /scripts/jd_jingxianghongbao.js > /logs/jd_jingxianghongbao.log 2>&1 | sed 's/^/ 【京享红包】/'; "
 #*/30 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_zooCollect.js > /logs/jd_zooCollect.log 2>&1 | sed 's/^/ 【动物联萌收金币】/'; "
 15 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_joy_feedPets.js > /logs/jd_joy_feedPets.log 2>&1 | sed 's/^/ 【宠汪汪喂食脚本】/'; "
 16 12 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_djjl.js > /logs/jd_djjl.log 2>&1 | sed 's/^/ 【京东电竞经理】/'; "
