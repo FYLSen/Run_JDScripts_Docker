@@ -138,7 +138,7 @@
 0 11,12 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_fruit_moreTask.ts > /logs/jd_fruit_moreTask.log 2>&1 | sed 's/^/ 【东东农场更多任务】/'; "
 41 */3 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_joy_park.ts > /logs/jd_joy_park.log 2>&1 | sed 's/^/ 【汪汪乐园】/'; "
 34 */3 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_qq_pasture.ts > /logs/jd_qq_pasture.log 2>&1 | sed 's/^/ 【QQ牧场】/'; "
-14 5,12,18 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_jxmc.ts > /logs/jd_jxmcts.log 2>&1 | sed 's/^/ 【惊喜牧场】/'; "
+#14 5,12,18 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_jxmc.ts > /logs/jd_jxmcts.log 2>&1 | sed 's/^/ 【惊喜牧场】/'; "
 23 */2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /cookies; ts-node /scripts/jd_moneyTree.ts > /logs/jd_moneyTreets.log 2>&1 | sed 's/^/ 【京东摇钱树】/'; "
 28 */3 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /cookies; ts-node /scripts/jd_yili_cow.ts  >> /scripts/logs/jd_yili_cow.log 2>&1 | sed 's/^/ 【伊利牛】/'; "
 12 2,23 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_wishingPool.ts > /logs/jd_wishingPoolts.log 2>&1 | sed 's/^/ 【众筹许愿池】/'; "
