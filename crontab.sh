@@ -16,7 +16,7 @@
 0 0,12 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_cfdtx.js > /logs/jd_cfdtx.log 2>&1 | sed 's/^/ 【财富岛提现】/'; "
 5 5,16 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_zzt.js > /logs/jd_zzt.log 2>&1 | sed 's/^/ 【制造团】/'; "
 11-51/20 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_health_collect.js > /logs/jd_health_collect.log 2>&1 | sed 's/^/ 【东东健康社区收能量】/'; "
-22 0-23/3 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_jxmc.js > /logs/jd_jxmc.log 2>&1 | sed 's/^/ 【惊喜牧场】/'; "
+42 */3 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_jxmc.js > /logs/jd_jxmc.log 2>&1 | sed 's/^/ 【惊喜牧场】/'; "
 8 */3 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_speed.js > /logs/jd_speed.log 2>&1 | sed 's/^/ 【天天加速】/'; "
 12 10,16 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_market_lottery.js > /logs/jd_market_lottery.log 2>&1 | sed 's/^/ 【幸运大转盘】/'; "
 14 2,20 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_joy_park.js > /logs/jd_joy_park.log 2>&1 | sed 's/^/ 【JOY乐园】/'; "
