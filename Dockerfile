@@ -10,7 +10,7 @@ RUN sed -i 's/^\(deb\|deb-src\) \([^ ]*\) \(.*\)/\1 http:\/\/mirrors.ustc.edu.cn
     && service cron start \
     # 安装node、TypeScript环境    
     && curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - \
-    && apt install -y --no-install-recommends --fix-missing nodejs \
+    && apt install -y --no-install-recommends --fix-missing nodejs npm \
     && npm install -g npm \
     && npm config set registry=http://registry.npm.taobao.org \
     && npm install -g typescript ts-node pm2 \
