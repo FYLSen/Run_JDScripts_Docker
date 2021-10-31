@@ -13,7 +13,7 @@ RUN sed -i 's/^\(deb\|deb-src\) \([^ ]*\) \(.*\)/\1 http:\/\/mirrors.ustc.edu.cn
     && apt install -y --no-install-recommends --fix-missing nodejs \
     && npm install -g npm \
     && npm config set registry=http://registry.npm.taobao.org \
-    && npm install -g typescript ts-node pm2
+    && npm install -g typescript ts-node pm2 \
     # 配置python3环境
     && apt install -y --no-install-recommends --fix-missing uwsgi python3-distutils uwsgi-plugin-python3 \
     && ln -s /usr/bin/python3 /usr/bin/python \
