@@ -126,9 +126,9 @@
 #17 16 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_task_sharecode.js > /logs/jd_task_sharecode.log 2>&1 | sed 's/^/ 【获取活动分享码】/'; "
 #17 15 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_get_share_code.js > /logs/jd_get_share_code.log 2>&1 | sed 's/^/ 【获取活动邀请码】/'; "
 # TypeScript新脚本
-0 8 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_getUp.ts > /logs/jd_getUp.log 2>&1 | sed 's/^/ 【早上领京豆】/'; "
+32 8 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_getUp.ts > /logs/jd_getUp.log 2>&1 | sed 's/^/ 【早上领京豆】/'; "
 #7 0,17 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_bean_sign.ts > /logs/jd_bean_sign.log 2>&1 | sed 's/^/ 【京东多合一签到】/'; "
-0 9,12 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_bean_box.ts > /logs/jd_bean_box.log 2>&1 | sed 's/^/ 【京东双签】/'; "
+11 9,14 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_bean_box.ts > /logs/jd_bean_box.log 2>&1 | sed 's/^/ 【京东双签】/'; "
 #17 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_cfd.ts > /logs/jd_cfdts.log 2>&1 | sed 's/^/ 【京喜财富岛】/'; "
 #10 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_cfd_hb.ts > /logs/jd_cfd_hb.log 2>&1 | sed 's/^/ 【京喜财富岛互幫】/'; "
 #0 0 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_cfd_withdraw.ts >> /scripts/logs/jd_cfd_withdraw.log 2>&1 | sed 's/^/ 【京喜财富岛提现3】/'; "
