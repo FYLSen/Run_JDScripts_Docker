@@ -129,7 +129,7 @@
 32 8 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_getUp.ts > /logs/jd_getUp.log 2>&1 | sed 's/^/ 【早上领京豆】/'; "
 0 9,13,16,19,20 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_homepageTW.ts > /logs/jd_homepageTW.log 2>&1 | sed 's/^/ 【首页下拉】/'; "
 11 9,14 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_bean_box.ts > /logs/jd_bean_box.log 2>&1 | sed 's/^/ 【京东双签】/'; "
-#17 4,16 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_cfd.ts > /logs/jd_cfdts.log 2>&1 | sed 's/^/ 【京喜财富岛】/'; "
+0,47 0,1,6 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_bean_sign.ts > /logs/jd_bean_sign.log 2>&1 | sed 's/^/ 【京东签到】/'; "
 #10 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_cfd_hb.ts > /logs/jd_cfd_hb.log 2>&1 | sed 's/^/ 【京喜财富岛互幫】/'; "
 #0 0 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_cfd_withdraw.ts >> /scripts/logs/jd_cfd_withdraw.log 2>&1 | sed 's/^/ 【京喜财富岛提现3】/'; "
 0 */6 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_xtg.ts > /logs/jd_xtgts.log 2>&1 | sed 's/^/ 【京推官】/'; "
