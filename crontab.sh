@@ -66,7 +66,7 @@
 3 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_super_redrain.js > /logs/jd_super_redrain.js.log 2>&1 | sed 's/^/ 【整点红包雨】/'; "
 30 10,12 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /cookies; node /scripts/jd_superBrand.js > /logs/jd_superBrand.js.log 2>&1 | sed 's/^/ 【首页下拉】/'; "
 4 1-23/4 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_superMarket.js > /logs/jd_superMarket.js.log 2>&1 | sed 's/^/ 【东东超市】/'; "
-7,37 1,13 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_syj.js > /logs/jd_syj.js.log 2>&1 | sed 's/^/ 【十元街】/'; "
+#7,37 1,13 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_syj.js > /logs/jd_syj.js.log 2>&1 | sed 's/^/ 【十元街】/'; "
 19 1,2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_ttpt.js > /logs/jd_ttpt.js.log 2>&1 | sed 's/^/ 【天天拼图】/'; "
 50 23 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_unsubscribe.js > /logs/jd_unsubscribe.js.log 2>&1 | sed 's/^/ 【京东取关商品】/'; "
 21 23 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_unsubscriLive.js > /logs/jd_unsubscriLive.js.log 2>&1 | sed 's/^/ 【京东取关主播】/'; "
