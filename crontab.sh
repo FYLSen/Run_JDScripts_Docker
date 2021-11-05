@@ -50,7 +50,7 @@
 12 10,16 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_market_lottery.js > /logs/jd_market_lottery.js.log 2>&1 | sed 's/^/ 【幸运大转盘】/'; "
 9 */3,23 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_mohe.js > /logs/jd_mohe.js.log 2>&1 | sed 's/^/ 【5G魔盒】/'; "
 10,25 7 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_ms.js > /logs/jd_ms.js.log 2>&1 | sed 's/^/ 【京东秒秒币】/'; "
-1 0,9,19,23 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jx_nnfls.js > /logs/jx_nnfls.js.log 2>&1 | sed 's/^/ 【牛牛福利舍】/'; "
+1 0,9,19,23 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_nnfls.js > /logs/jd_nnfls.js.log 2>&1 | sed 's/^/ 【牛牛福利舍】/'; "
 25 2,19 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /cookies; node /scripts/jd_nzmh.js > /logs/jd_nzmh.js.log 2>&1 | sed 's/^/ 【女装盲盒】/'; "
 39 1-19/6 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_pigPet.js > /logs/jd_pigPet.js.log 2>&1 | sed 's/^/ 【金融养猪】/'; "
 41 13,19 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_ppdz.js > /logs/jd_ppdz.js.log 2>&1 | sed 's/^/ 【泡泡大战】/'; "
