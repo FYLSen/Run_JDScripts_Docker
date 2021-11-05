@@ -75,6 +75,7 @@
 23 7,9 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_xsljd.js > /logs/jd_xsljd.js.log 2>&1 | sed 's/^/ 【限时抢京豆】/'; "
 35 1,2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_ys.js > /logs/jd_ys.js.log 2>&1 | sed 's/^/ 【预售福利机】/'; "
 44 1,2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_zsign.js > /logs/jd_zsign.js.log 2>&1 | sed 's/^/ 【芥么签到】/'; "
+14 16,21 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_jump.js > /logs/jd_jump.js.log 2>&1 | sed 's/^/ 【跳跳乐瓜分京豆】/'; "
 # JS脚本（带助力）>>
 6 6-23/2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /Run_JDScripts_Docker/ShareCodes/Default.sh; source /overall; source /env; source /cookies; node /scripts/jd_plantBean.js > /logs/jd_plantBean.js.log 2>&1 | sed 's/^/ 【种豆得豆】/'; "
 34 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /Run_JDScripts_Docker/ShareCodes/Default.sh; source /overall; source /env; source /cookies; node /scripts/jd_jdfactory.js > /logs/jd_jdfactory.js.log 2>&1 | sed 's/^/ 【东东工厂】/'; "
