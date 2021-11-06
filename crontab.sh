@@ -14,6 +14,7 @@
 0 0 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_reward.js > /logs/jd_reward.js.log  2>&1 | sed 's/^/ 【兑换】/'; "
 # JS脚本（无助力） >>
 1-59/23 0,5 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/JD_DailyBonus.js > /logs/JD_DailyBonus.js.log 2>&1 | sed 's/^/ 【京豆签到脚本】/'; "
+23 11,19 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_travel_shop.js > /logs/jd_travel_shop.js.log 2>&1 | sed 's/^/ 【双11环游记大富翁】/'; "
 58 7,15,23 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_validate_Worker.js > /logs/jd_validate_Worker.js.log 2>&1 | sed 's/^/ 【默认预存5个validate】/'; "
 0 6-22/2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_lsj.js > /logs/jd_lsj.js.log 2>&1 | sed 's/^/ 【零食街】/'; "
 13 6,22 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_jxg.js > /logs/jd_jxg.js.log 2>&1 | sed 's/^/ 【京小鸽】/'; "
