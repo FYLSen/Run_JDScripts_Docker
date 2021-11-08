@@ -17,6 +17,8 @@
 23 11,19 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_travel_shop.js > /logs/jd_travel_shop.js.log 2>&1 | sed 's/^/ 【双11环游记大富翁】/'; "
 58 7,15,23 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_validate_Worker.js > /logs/jd_validate_Worker.js.log 2>&1 | sed 's/^/ 【默认预存5个validate】/'; "
 0 6-22/2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_lsj.js > /logs/jd_lsj.js.log 2>&1 | sed 's/^/ 【零食街】/'; "
+0 0,12,20 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_qjd.js > /logs/jd_qjd.js.log 2>&1 | sed 's/^/ 【全民抢京豆】/'; "
+37 9,22 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_syj.js > /logs/jd_syj.js.log 2>&1 | sed 's/^/ 【十元街】/'; "
 13 6,22 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_jxg.js > /logs/jd_jxg.js.log 2>&1 | sed 's/^/ 【京小鸽】/'; "
 31,36 7 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_bean_home.js > /logs/jd_bean_home.js.log 2>&1 | sed 's/^/ 【任务京豆】/'; "
 35 6-20/7 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /cookies; node /scripts/jd_beauty.js > /logs/jd_beauty.js.log 2>&1 | sed 's/^/ 【美丽研究院】/'; "
