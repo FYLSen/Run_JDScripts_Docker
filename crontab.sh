@@ -115,5 +115,5 @@
 # 三脚本
 23 2,9 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_jmf.js > /logs/jd_jmf.js.log; node /scripts/jd_mf.js > /logs/jd_mf.js.log; ts-node /scripts/jd_mofang.ts > /logs/jd_mofang.ts.log 2>&1 | sed 's/^/ 【京东小魔方】/'; "
 # Python 脚本
-45 9,21 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; python3 /scripts/jd_fanli.py > /logs/jd_fanli.py.log 2>&1 | sed 's/^/ 【京东饭粒】/'; "
+45 9,21 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; python3 /scripts/jd_fanli.py > /logs/jd_fanli.py.log ; ts-node /scripts/fanli.ts > /logs/jd_fanli.ts.log 2>&1 | sed 's/^/ 【京东饭粒】/'; "
 13 8,21 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; python3 /scripts/jd_hyjcoin.py > /logs/jd_hyjcoin.py.log 2>&1 | sed 's/^/ 【环游记逛店铺抽金币】/'; "
