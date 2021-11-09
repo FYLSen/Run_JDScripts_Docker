@@ -67,7 +67,7 @@
 2,44 0,5,7 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall;  source /cookies; node /scripts/jd_speed_redpocke.js > /logs/jd_speed_redpocke.js.log 2>&1 | sed 's/^/ 【京东极速版红包】/'; "
 17,26 7 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_speed_sign.js > /logs/jd_speed_sign.js.log 2>&1 | sed 's/^/ 【京东极速版签到】/'; "
 3 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_super_redrain.js > /logs/jd_super_redrain.js.log 2>&1 | sed 's/^/ 【整点红包雨】/'; "
-30 10,12 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /cookies; node /scripts/jd_superBrand.js > /logs/jd_superBrand.js.log 2>&1 | sed 's/^/ 【首页下拉】/'; "
+#30 10,12 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /cookies; node /scripts/jd_superBrand.js > /logs/jd_superBrand.js.log 2>&1 | sed 's/^/ 【首页下拉】/'; "
 4 1-23/4 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_superMarket.js > /logs/jd_superMarket.js.log 2>&1 | sed 's/^/ 【东东超市】/'; "
 7,37 13,21 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_vivo.js > /logs/jd_vivo.js.log 2>&1 | sed 's/^/ 【vivo蚊子腿】/'; "
 19 1,2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_ttpt.js > /logs/jd_ttpt.js.log 2>&1 | sed 's/^/ 【天天拼图】/'; "
