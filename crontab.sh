@@ -75,7 +75,7 @@
 21 23 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_unsubscriLive.js > /logs/jd_unsubscriLive.js.log 2>&1 | sed 's/^/ 【京东取关主播】/'; "
 21 10,19 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /cookies; node /scripts/jd_wish.js > /logs/jd_wish.js.log 2>&1 | sed 's/^/ 【众筹许愿池】/'; "
 14 0-23/6 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_wsdlb.js > /logs/jd_wsdlb.js.log 2>&1 | sed 's/^/ 【柠檬我是大佬农场】/'; "
-23 7,9 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_xsljd.js > /logs/jd_xsljd.js.log 2>&1 | sed 's/^/ 【限时抢京豆】/'; "
+#23 7,9 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_xsljd.js > /logs/jd_xsljd.js.log 2>&1 | sed 's/^/ 【限时抢京豆】/'; "
 35 1,2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_ys.js > /logs/jd_ys.js.log 2>&1 | sed 's/^/ 【预售福利机】/'; "
 44 1,2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_zsign.js > /logs/jd_zsign.js.log 2>&1 | sed 's/^/ 【芥么签到】/'; "
 14 16,21 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_jump.js > /logs/jd_jump.js.log 2>&1 | sed 's/^/ 【跳跳乐瓜分京豆】/'; "
