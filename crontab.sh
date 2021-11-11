@@ -63,7 +63,7 @@
 36 6,14 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_selectionOfficer.js > /logs/jd_selectionOfficer.js.log 2>&1 | sed 's/^/ 【选品师】/'; "
 1 0 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /cookies; node /scripts/jd_shop.js > /logs/jd_shop.js.log 2>&1 | sed 's/^/ 【进店领豆脚本】/'; "
 14 1,2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_sign_graphics.js > /logs/jd_sign_graphics.js.log 2>&1 | sed 's/^/ 【验证签到】/'; "
-20 1,23 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_sjjc.js > /logs/jd_sjjc.js.log 2>&1 | sed 's/^/ 【手机竞猜】/'; "
+#20 1,23 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_sjjc.js > /logs/jd_sjjc.js.log 2>&1 | sed 's/^/ 【手机竞猜】/'; "
 2,44 0,5,7 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall;  source /cookies; node /scripts/jd_speed_redpocke.js > /logs/jd_speed_redpocke.js.log 2>&1 | sed 's/^/ 【京东极速版红包】/'; "
 17,26 7 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_speed_sign.js > /logs/jd_speed_sign.js.log 2>&1 | sed 's/^/ 【京东极速版签到】/'; "
 3 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_super_redrain.js > /logs/jd_super_redrain.js.log 2>&1 | sed 's/^/ 【整点红包雨】/'; "
