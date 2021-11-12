@@ -75,7 +75,7 @@
 21 23 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_unsubscriLive.js > /logs/jd_unsubscriLive.js.log 2>&1 | sed 's/^/ 【京东取关主播】/'; "
 21 10,19 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /cookies; node /scripts/jd_wish.js > /logs/jd_wish.js.log 2>&1 | sed 's/^/ 【众筹许愿池】/'; "
 14 0-23/6 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_wsdlb.js > /logs/jd_wsdlb.js.log 2>&1 | sed 's/^/ 【柠檬我是大佬农场】/'; "
-#23 7,9 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_xsljd.js > /logs/jd_xsljd.js.log 2>&1 | sed 's/^/ 【限时抢京豆】/'; "
+40 7,19 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_fanli.js > /logs/jd_fanli.js.log 2>&1 | sed 's/^/ 【京东饭粒】/'; "
 35 15,26 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_superBrand.js > /logs/jd_superBrand.js.log 2>&1 | sed 's/^/ 【特务抢京豆】/'; "
 44 1,2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_zsign.js > /logs/jd_zsign.js.log 2>&1 | sed 's/^/ 【芥么签到】/'; "
 14 16,21 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_jump.js > /logs/jd_jump.js.log 2>&1 | sed 's/^/ 【跳跳乐瓜分京豆】/'; "
@@ -116,6 +116,6 @@
 # 三脚本
 23 2,9 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_jmf.js > /logs/jd_jmf.js.log; node /scripts/jd_mf.js > /logs/jd_mf.js.log; ts-node /scripts/jd_mofang.ts > /logs/jd_mofang.ts.log 2>&1 | sed 's/^/ 【京东小魔方】/'; "
 # Python 脚本
-0 0,8,20 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; python3 /scripts/jd_fanli.py > /logs/jd_fanli.py.log ; ts-node /scripts/fanli.ts > /logs/jd_fanli.ts.log 2>&1 | sed 's/^/ 【京东饭粒】/'; "
+17 0,8,20 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; python3 /scripts/jd_fanli.py > /logs/jd_fanli.py.log ; ts-node /scripts/jd_ifanli.ts > /logs/jd_ifanli.ts.log 2>&1 | sed 's/^/ 【京东饭粒】/'; "
 #0 0,9,21 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; python3 /scripts/jd_fanli.py > /logs/jd_fanli.py.log ; ts-node /scripts/jd_ifanli.ts > /logs/jd_ifanli.ts.log 2>&1 | sed 's/^/ 【京东饭粒】/'; "
 #46 4,20 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; python3 /scripts/jd_newTreasure.py > /logs/jd_newTreasure.py.log 2>&1 | sed 's/^/ 【发现新宝藏】/'; "
