@@ -78,7 +78,7 @@
 40 7,19 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_fanli.js > /logs/jd_fanli.js.log 2>&1 | sed 's/^/ 【京东饭粒】/'; "
 35 15,26 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_superBrand.js > /logs/jd_superBrand.js.log 2>&1 | sed 's/^/ 【特务抢京豆】/'; "
 44 1,2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_zsign.js > /logs/jd_zsign.js.log 2>&1 | sed 's/^/ 【芥么签到】/'; "
-14 16,21 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_jump.js > /logs/jd_jump.js.log 2>&1 | sed 's/^/ 【跳跳乐瓜分京豆】/'; "
+14 16,21,23 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_jump.js > /logs/jd_jump.js.log 2>&1 | sed 's/^/ 【跳跳乐瓜分京豆】/'; "
 # JS脚本（带助力）>>
 6 6-23/2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /Run_JDScripts_Docker/ShareCodes/Default.sh; source /overall; source /env; source /cookies; node /scripts/jd_plantBean.js > /logs/jd_plantBean.js.log 2>&1 | sed 's/^/ 【种豆得豆】/'; "
 34 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /Run_JDScripts_Docker/ShareCodes/Default.sh; source /overall; source /env; source /cookies; node /scripts/jd_jdfactory.js > /logs/jd_jdfactory.js.log 2>&1 | sed 's/^/ 【东东工厂】/'; "
@@ -93,7 +93,7 @@
 5 6-18/6 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /Run_JDScripts_Docker/ShareCodes/Default.sh; source /overall; source /env; source /cookies; node /scripts/jd_pet.js > /logs/jd_pet.js.log 2>&1 | sed 's/^/ 【东东萌宠】/'; "
 # 动态邀请码脚本 >>
 #0 */6 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /ShareCodes/Temp.sh; source /overall; source /env; source /cookies; node /scripts/jd_carnivalcity.js > /logs/jd_carnivalcity.js.log 2>&1 | sed 's/^/ 【手机狂欢城】/'; "
-19 6-23/12 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /ShareCodes/Temp.sh; source /overall; source /env; source /cookies; node /scripts/jd_tyt.js.js > /logs/jd_tyt.js.log 2>&1 | sed 's/^/ 【柠檬推一推】/'; "
+#19 6-23/12 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /ShareCodes/Temp.sh; source /overall; source /env; source /cookies; node /scripts/jd_tyt.js.js > /logs/jd_tyt.js.log 2>&1 | sed 's/^/ 【柠檬推一推】/'; "
 # 远程邀请码脚本 >>
 #23 4,5,23 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /cookies; node /scripts/jd_small_home.js > /logs/jd_small_home.js.log 2>&1 | sed 's/^/ 【东东小窝】/'; "
 # TS脚本 >>
