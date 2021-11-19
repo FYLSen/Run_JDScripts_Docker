@@ -112,7 +112,7 @@
 20 1-23/3 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_joypark_joy.js > /logs/jd_joypark_joy.js.log; ts-node /scripts/jd_joy_park.ts > /logs/jd_joy_park.ts.log 2>&1 | sed 's/^/ 【汪汪乐园养joy】/'; "
 53 */3 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /Run_JDScripts_Docker/ShareCodes/Default.sh; source /overall; source /env; source /cookies; node /scripts/jd_jxmc.js > /logs/jd_jxmc.js.log; ts-node /scripts/jd_jxmc.ts > /logs/jd_jxmc.ts.log  2>&1 | sed 's/^/ 【惊喜牧场】/'; "
 40 */2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /cookies; node /scripts/jd_moneyTree.js > /logs/jd_moneyTree.js.log; ts-node /scripts/jd_moneyTree.ts > /logs/jd_moneyTree.ts.log 2>&1 | sed 's/^/ 【京东摇钱树】/'; "
-22 3,4 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /Run_JDScripts_Docker/ShareCodes/Default.sh; source /overall; source /env; source /cookies; node /scripts/jd_xtg.js > /logs/jd_xtg.js.log; ts-node /scripts/jd_xtg.ts > /logs/jd_xtg.ts.log  2>&1 | sed 's/^/ 【星推官】/'; "
+#22 3,4 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /Run_JDScripts_Docker/ShareCodes/Default.sh; source /overall; source /env; source /cookies; node /scripts/jd_xtg.js > /logs/jd_xtg.js.log; ts-node /scripts/jd_xtg.ts > /logs/jd_xtg.ts.log  2>&1 | sed 's/^/ 【星推官】/'; "
 # 三脚本
 23 2,9 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_jmf.js > /logs/jd_jmf.js.log; node /scripts/jd_mf.js > /logs/jd_mf.js.log; ts-node /scripts/jd_mofang.ts > /logs/jd_mofang.ts.log 2>&1 | sed 's/^/ 【京东小魔方】/'; "
 # Python 脚本
