@@ -31,7 +31,7 @@
 25 7,9 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_ddly.js > /logs/jd_ddly.js.log 2>&1 | sed 's/^/ 【东东乐园】/'; "
 16 1 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /cookies; node /scripts/jd_delCoupon.js > /logs/jd_delCoupon.js.log 2>&1 | sed 's/^/ 【优惠券删除】/'; "
 40 0-23/2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_djjl.js > /logs/jd_djjl.js.log 2>&1 | sed 's/^/ 【电竞经理】/'; "
-43 11,15 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_dpqd.js > /logs/jd_dpqd.js.log 2>&1 | sed 's/^/ 【店铺签到】/'; "
+#43 11,15 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_dpqd.js > /logs/jd_dpqd.js.log 2>&1 | sed 's/^/ 【店铺签到】/'; "
 #22 8 1-20 * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_dqmh.js > /logs/jd_dqmh.js.log 2>&1 | sed 's/^/ 【东东电器盲盒】/'; "
 6 9,11 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_dwapp.js > /logs/jd_dwapp.js.log 2>&1 | sed 's/^/ 【积分换话费】/'; "
 11 0,9 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_fission.js > /logs/jd_fission.js.log 2>&1 | sed 's/^/ 【超市换豆】/'; "
@@ -100,6 +100,7 @@
 19 3,9,19,23 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jx_nnfls.ts > /logs/jx_nnfls.ts.log 2>&1 | sed 's/^/ 【牛牛福利舍】/'; "
 28 3,15,17 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /cookies; ts-node /scripts/jd_yili_cow.ts  >> /scripts/logs/jd_yili_cow.log 2>&1 | sed 's/^/ 【伊利牛】/'; "
 1 1,9,12,18 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_bean_box.ts > /logs/jd_bean_box.ts.log 2>&1 | sed 's/^/ 【领京豆-任务】/'; "
+47 */3 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_joy_new.ts > /logs/jd_joy_new.ts.log 2>&1 | sed 's/^/ 【joy_new】/'; "
 16 8,14 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_foodRunning.ts > /logs/jd_foodRunning.ts.log 2>&1 | sed 's/^/ 【jd_foodRunning.ts】/'; "
 46 2,4 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_IndustryLottery.ts > /logs/jd_IndustryLottery.ts.log 2>&1 | sed 's/^/ 【jd_IndustryLottery.ts】/'; "
 26 6,7 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_getUp.ts > /logs/jd_getUp.ts.log  2>&1 | sed 's/^/ 【起床了】/'; "
@@ -118,4 +119,4 @@
 # Python 脚本
 17 0,8,20 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; python3 /scripts/jd_fanli.py > /logs/jd_fanli.py.log ; ts-node /scripts/jd_ifanli.ts > /logs/jd_ifanli.ts.log 2>&1 | sed 's/^/ 【京东饭粒】/'; "
 #0 0,9,21 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; python3 /scripts/jd_fanli.py > /logs/jd_fanli.py.log ; ts-node /scripts/jd_ifanli.ts > /logs/jd_ifanli.ts.log 2>&1 | sed 's/^/ 【京东饭粒】/'; "
-#46 4,20 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; python3 /scripts/jd_newTreasure.py > /logs/jd_newTreasure.py.log 2>&1 | sed 's/^/ 【发现新宝藏】/'; "
+#46 4,20 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; python3 /scripts/jd_getred.py > /logs/jd_getred.py.log 2>&1 | sed 's/^/ 【薅羊毛织毛衣】/'; "
