@@ -31,7 +31,7 @@
 25 7,9 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_ddly.js > /logs/jd_ddly.js.log 2>&1 | sed 's/^/ 【东东乐园】/'; "
 16 1 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /cookies; node /scripts/jd_delCoupon.js > /logs/jd_delCoupon.js.log 2>&1 | sed 's/^/ 【优惠券删除】/'; "
 40 0-23/2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_djjl.js > /logs/jd_djjl.js.log 2>&1 | sed 's/^/ 【电竞经理】/'; "
-#43 11,15 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_dpqd.js > /logs/jd_dpqd.js.log 2>&1 | sed 's/^/ 【店铺签到】/'; "
+43 11,15 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_dpqd.js > /logs/jd_dpqd.js.log 2>&1 | sed 's/^/ 【店铺签到】/'; "
 #22 8 1-20 * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_dqmh.js > /logs/jd_dqmh.js.log 2>&1 | sed 's/^/ 【东东电器盲盒】/'; "
 6 9,11 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_dwapp.js > /logs/jd_dwapp.js.log 2>&1 | sed 's/^/ 【积分换话费】/'; "
 11 0,9 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_fission.js > /logs/jd_fission.js.log 2>&1 | sed 's/^/ 【超市换豆】/'; "
