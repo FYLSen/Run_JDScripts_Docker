@@ -38,7 +38,7 @@
 37 0,11 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_genz.js > /logs/jd_genz.js.log 2>&1 | sed 's/^/ 【芥么赚豪礼】/'; "
 14 10,16 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /cookies; node /scripts/jd_try.js > /logs/jd_try.js.log 2>&1 | sed 's/^/ 【京东试用】/'; "
 13 1,22 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_gold_creator.js > /logs/jd_gold_creator.js.log 2>&1 | sed 's/^/ 【金榜创造营】/'; "
-#43 6,7 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_goodMorning.js > /logs/jd_goodMorning.js.log 2>&1 | sed 's/^/ 【早起福利】/'; "
+43 6,12 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_gold_sign.js > /logs/jd_gold_sign.js.log 2>&1 | sed 's/^/ 【京东金榜】/'; "
 31 16-23/1 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_half_redrain.js > /logs/jd_half_redrain.js.log 2>&1 | sed 's/^/ 【半点红包雨】/'; "
 11-51/20 1-5/1 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_health_collect.js > /logs/jd_health_collect.js.log 2>&1 | sed 's/^/ 【东东健康社区收能量】/'; "
 41 1,5 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_jin_tie.js > /logs/jd_jin_tie.js.log 2>&1 | sed 's/^/ 【领津贴】/'; "
