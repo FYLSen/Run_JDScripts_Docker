@@ -106,6 +106,7 @@
 46 2,4 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_IndustryLottery.ts > /logs/jd_IndustryLottery.ts.log 2>&1 | sed 's/^/ 【jd_IndustryLottery.ts】/'; "
 26 6,7 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_getUp.ts > /logs/jd_getUp.ts.log  2>&1 | sed 's/^/ 【起床了】/'; "
 34 1-22/3 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_qq_pasture.ts > /logs/jd_qq_pasture.log 2>&1 | sed 's/^/ 【QQ牧场】/'; "
+43 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_cfd_game.ts > /logs/jd_cfd_game.ts.log 2>&1 | sed 's/^/ 【财富岛合成】/'; "
 37 2,4 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_tewu.ts > /logs/jd_tewu.ts.log 2>&1 | sed 's/^/ 【首页下拉】/'; "
 # JS + TS 脚本
 41 1-23 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /Run_JDScripts_Docker/ShareCodes/Default.sh; source /overall; source /env; source /cookies; node /scripts/jd_cfd.js > /logs/jd_cfd.js.log; ts-node /scripts/jd_cfd.ts > /logs/jd_cfdts.ts.log  2>&1 | sed 's/^/ 【财富岛】/'; "
