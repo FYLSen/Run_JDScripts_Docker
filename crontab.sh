@@ -61,6 +61,8 @@
 47 6,7 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /cookies; node /scripts/jd_rankingList.js > /logs/jd_rankingList.js.log 2>&1 | sed 's/^/ 【京东排行榜】/'; "
 1,23 1 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_redPacket.js > /logs/jd_redPacket.js.log 2>&1 | sed 's/^/ 【全民开红包脚本】/'; "
 36 6,14 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_selectionOfficer.js > /logs/jd_selectionOfficer.js.log 2>&1 | sed 's/^/ 【选品师】/'; "
+13 17 6 12 * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_jr_draw.js > /logs/jd_jr_draw.js.log 2>&1 | sed 's/^/ 【京东金融每周福利】/'; "
+26 7,17 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_sxLottery.js > /logs/jd_sxLottery.js.log 2>&1 | sed 's/^/ 【京东生鲜每日抽奖】/'; "
 1 0 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /cookies; node /scripts/jd_shop.js > /logs/jd_shop.js.log 2>&1 | sed 's/^/ 【进店领豆脚本】/'; "
 14 1,2 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /cookies; node /scripts/jd_sign_graphics.js > /logs/jd_sign_graphics.js.log 2>&1 | sed 's/^/ 【验证签到】/'; "
 #20 1,23 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_sjjc.js > /logs/jd_sjjc.js.log 2>&1 | sed 's/^/ 【手机竞猜】/'; "
@@ -109,7 +111,7 @@
 34 1-22/3 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_qq_pasture.ts > /logs/jd_qq_pasture.log 2>&1 | sed 's/^/ 【QQ牧场】/'; "
 43 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_cfd_game.ts > /logs/jd_cfd_game.ts.log 2>&1 | sed 's/^/ 【财富岛合成】/'; "
 37 2,4 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_tewu.ts > /logs/jd_tewu.ts.log 2>&1 | sed 's/^/ 【首页下拉】/'; "
-7 */6 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_jinli_redpacket.ts > /logs/jd_jinli_redpacket.ts.log 2>&1 | sed 's/^/ 【锦鲤红包】/'; "
+7 */6 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_jinli_hongbao.ts > /logs/jd_jinli_hongbao.ts.log 2>&1 | sed 's/^/ 【锦鲤红包】/'; "
 # JS + TS 脚本
 41 1-23 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /Run_JDScripts_Docker/ShareCodes/Default.sh; source /overall; source /env; source /cookies; node /scripts/jd_cfd.js > /logs/jd_cfd.js.log; ts-node /scripts/jd_cfd.ts > /logs/jd_cfdts.ts.log  2>&1 | sed 's/^/ 【财富岛】/'; "
 45 3,9 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_ddworld.js > /logs/jd_ddworld.js.log; ts-node /scripts/jd_ddworld.ts > /logs/jd_ddworld.ts.log  2>&1 | sed 's/^/ 【东东世界】/'; "
