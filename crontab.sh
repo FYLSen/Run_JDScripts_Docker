@@ -112,6 +112,7 @@
 43 * * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_cfd_game.ts > /logs/jd_cfd_game.ts.log 2>&1 | sed 's/^/ 【财富岛合成】/'; "
 37 2,4 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_tewu.ts > /logs/jd_tewu.ts.log 2>&1 | sed 's/^/ 【首页下拉】/'; "
 7 */6 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_jinli_hongbao.ts > /logs/jd_jinli_hongbao.ts.log 2>&1 | sed 's/^/ 【锦鲤红包】/'; "
+37 6,12,22 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; ts-node /scripts/jd_jinbang.ts > /logs/jd_jinbang.ts.log 2>&1 | sed 's/^/ 【京东金榜】/'; "
 # JS + TS 脚本
 41 1-23 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /Run_JDScripts_Docker/ShareCodes/Default.sh; source /overall; source /env; source /cookies; node /scripts/jd_cfd.js > /logs/jd_cfd.js.log; ts-node /scripts/jd_cfd.ts > /logs/jd_cfdts.ts.log  2>&1 | sed 's/^/ 【财富岛】/'; "
 45 3,9 * * * bash -c "exec 1<>/proc/1/fd/1; exec 2<>/proc/1/fd/2; set -o allexport; source /overall; source /env; source /cookies; node /scripts/jd_ddworld.js > /logs/jd_ddworld.js.log; ts-node /scripts/jd_ddworld.ts > /logs/jd_ddworld.ts.log  2>&1 | sed 's/^/ 【东东世界】/'; "
